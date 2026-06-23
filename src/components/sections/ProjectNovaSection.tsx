@@ -1,6 +1,12 @@
 export default function ProjectNovaSection() {
   return (
-    <section className="min-h-[80vh] grid md:grid-cols-2 bg-black">
+    <section className="min-h-[80vh] grid md:grid-cols-2"
+      style={{
+        backgroundImage: "url('/STFNova1.webp')",
+        backgroundSize: 'cover',
+        width: '100%'
+      }}
+    >
       <div className="flex items-center justify-center py-20 px-8 md:px-16">
         <div className="max-w-lg">
           <h2 className="font-heading text-6xl md:text-7xl text-white mb-6">
@@ -20,9 +26,6 @@ export default function ProjectNovaSection() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center py-20 px-8">
-        <div className="w-full aspect-[4/3] bg-slate-800 rounded-lg" />
-      </div>
     </section>
   );
 }
