@@ -32,13 +32,13 @@ export default function SponsorshipsSection() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="#"
-              className="inline-block border border-white/30 px-6 py-2 uppercase text-sm hover:bg-white/10 transition-colors text-center"
+              className="inline-block border border-violet-300/30 px-6 py-2 uppercase text-sm hover:bg-violet-500/20 transition-all text-center rounded-sm"
             >
               WATCH &amp; SUPPORT US
             </a>
             <a
               href="/sponsorships"
-              className="inline-block bg-[#5c543b] text-white px-6 py-2 uppercase text-sm hover:opacity-90 transition-opacity text-center"
+              className="inline-block bg-violet-900/50 text-violet-100 px-6 py-2 uppercase text-sm hover:bg-violet-800/50 transition-colors text-center rounded-sm"
             >
               SPONSORSHIP TIERS
             </a>

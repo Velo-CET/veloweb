@@ -13,7 +13,7 @@ export default function ProjectNovaSection() {
           </p>
           <a
             href="/about"
-            className="inline-block border border-white/30 px-6 py-2 uppercase text-sm hover:bg-white/10 transition-colors"
+            className="inline-block border border-violet-300/30 px-6 py-2 uppercase text-sm hover:bg-violet-500/20 transition-all rounded-sm"
           >
             READ MORE ABOUT US
           </a>

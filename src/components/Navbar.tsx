@@ -22,7 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const navLinks = ["ABOUT US", "PROJECTS", "BROCHURE"];
+  const navLinks = ["ABOUT US", "PROJECTS", "SUPPORT"];
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Navbar() {
       >
         <div className="flex items-center gap-3">
           <button
-            className="md:hidden flex flex-col items-start gap-[5px]"
+            className="md:hidden flex flex-col items-start gap-[5px] self-end"
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
@@ -47,21 +47,21 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-8 justify-center absolute left-1/2 transform -translate-x-1/2">
           {navLinks.map((link) => (
             <a
               key={link}
               href="#"
-              className="text-xs uppercase tracking-widest text-white hover:text-white/70 transition-colors"
+              className="text-xs uppercase tracking-widest text-white hover:text-violet-400 transition-colors"
             >
               {link}
             </a>
           ))}
         </div>
 
-        <button className="hidden md:block border border-white/30 rounded px-6 py-2 text-xs uppercase tracking-widest text-white hover:bg-white/10 transition-colors">
-          CONTACT US
-        </button>
+          <button className="hidden md:block border border-violet-300/30 px-6 py-2 text-xs uppercase tracking-widest text-white hover:bg-violet-500/20 transition-all rounded-sm">
+            CONTACT US
+          </button>
       </nav>
 
       {isOpen && (
@@ -73,7 +73,7 @@ export default function Navbar() {
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="self-end text-white/70 hover:text-white transition-colors"
+              className="self-end text-white/70 hover:text-violet-400 transition-all"
               aria-label="Close menu"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -84,13 +84,13 @@ export default function Navbar() {
               <a
                 key={link}
                 href="#"
-                className="text-sm uppercase tracking-widest text-white hover:text-white/70 transition-colors"
+                className="text-sm uppercase tracking-widest text-white hover:text-violet-400 transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 {link}
               </a>
             ))}
-            <button className="border border-white/30 rounded px-6 py-2 text-xs uppercase tracking-widest text-white hover:bg-white/10 transition-colors w-fit">
+            <button className="border border-violet-300/30 px-6 py-2 text-xs uppercase tracking-widest text-white hover:bg-violet-500/20 transition-all w-fit rounded-sm">
               CONTACT US
             </button>
           </div>

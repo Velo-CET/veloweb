@@ -3,7 +3,7 @@ export default function ContactSection() {
     <section id="contact" className="min-h-[80vh] flex items-center py-20 px-4">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-300/20 bg-violet-500/10 text-violet-300 text-xs font-medium mb-4">
             Get in Touch
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Contact Us</h2>
@@ -47,7 +47,7 @@ export default function ContactSection() {
               </div>
               <button
                 type="submit"
-                className="w-full px-8 py-3 text-sm font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded-xl transition-all hover:shadow-lg hover:shadow-cyan-500/25"
+                className="w-full px-8 py-3 text-sm font-semibold text-white bg-violet-600 hover:bg-violet-500 rounded-sm transition-all hover:shadow-lg hover:shadow-violet-500/25"
               >
                 Send Message
               </button>
@@ -63,27 +63,48 @@ export default function ContactSection() {
                 <span className="text-sm text-slate-500 font-medium">Map Placeholder</span>
               </div>
             </div>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <svg className="w-5 h-5 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                contact@velocet.space
-              </div>
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <svg className="w-5 h-5 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                +1 (555) 123-4567
-              </div>
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <svg className="w-5 h-5 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                CET Campus, Trivandrum
-              </div>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 text-sm text-slate-300">
+              <svg className="w-5 h-5 text-violet-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              velocet@cet.ac.in
             </div>
+            <div className="flex items-center gap-3 text-sm text-slate-300">
+              <svg className="w-5 h-5 text-violet-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Captain: +91 85479 209416
+            </div>
+            <div className="flex items-center gap-3 text-sm text-slate-300">
+              <svg className="w-5 h-5 text-violet-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Manager: +91 70255 60765
+            </div>
+            <div className="flex items-center gap-4 mt-4">
+              <a href="#" className="text-slate-400 hover:text-violet-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-2.937-1.887-3.327v-1.834c2.725.589 3.306 3.365 3.306 6.02V20.447zM7.998 8.548H4.998v11.404h3V8.548zM6.498 7.95c-1.2 0-2.172.986-2.172 2.198s.972 2.198 2.172 2.198 2.172-.986 2.172-2.198S7.698 7.95 6.498 7.95zM18 8.548h-3v6.699c0 3.06-3.783 2.95-3.783 2.95V8.548z"/>
+                </svg>
+              </a>
+              <a href="#" className="text-slate-400 hover:text-violet-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-2.937-1.887-3.327v-1.834c2.725.589 3.306 3.365 3.306 6.02V20.447zM7.998 8.548H4.998v11.404h3V8.548zM6.498 7.95c-1.2 0-2.172.986-2.172 2.198s.972 2.198 2.172 2.198 2.172-.986 2.172-2.198S7.698 7.95 6.498 7.95zM18 8.548h-3v6.699c0 3.06-3.783 2.95-3.783 2.95V8.548z"/>
+                </svg>
+              </a>
+              <a href="#" className="text-slate-400 hover:text-violet-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.615 3.184c-3.145-.615-9.858.335-13.26 2.860C3.226 8.052 1.94 11.652 2 15.247c.06 3.594 2.326 7.292 5.616 8.814 3.29 1.522 7.914.668 10.484-.845 2.57-1.513 4.303-4.785 4.497-7.867.193-3.082-1.327-6.037-4.071-7.719z"/>
+                </svg>
+              </a>
+              <a href="#" className="text-slate-400 hover:text-violet-400 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21.321 6.639c-.594-2.048-2.319-3.641-4.349-4.235-3.006-.608-15.123-.608-18.129 0C2.639 3.205.814 5.648.219 7.697-.376 9.75 0 13.002 0 16.254c0 3.252.376 6.503 1.476 9.556.594 2.048 2.319 3.641 4.349 4.235 3.006.608 15.123.608 18.129 0 2.048-.594 3.641-2.187 4.235-4.235 1.101-3.053 1.476-6.304 1.476-9.556 0-3.252-.375-6.504-1.476-9.556zm-10.68 15.62h-2.906V9.354h2.906v12.305zM8.724 7.938c-1.006 0-1.822-.813-1.822-1.821s.816-1.821 1.822-1.821 1.822 1.821-.816 1.821-1.822 1.821-1.822 1.821zm5.745 12.305h-2.906V12.14h2.906v8.103z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
           </div>
         </div>
       </div>

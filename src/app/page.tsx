@@ -10,11 +10,17 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <AboutSection />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <ProjectSD1000Section />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <ProjectNovaSection />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <RoadmapSection />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <SponsorshipsSection />
+      <hr className="border-t-1.5 border-violet-300/30 w-full" />
       <ContactSection />
     </>
   );
