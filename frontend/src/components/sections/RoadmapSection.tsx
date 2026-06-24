@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function RoadmapSection() {
+  const [activeNode, setActiveNode] = useState<number | null>(null);
+
   const nodes = [
     {
       title: "CLUB FOUNDED",
@@ -22,104 +28,90 @@ export default function RoadmapSection() {
     },
     {
       title: "ADVANCED TECH RESEARCH",
-      subtitle: "Landing Rocket, Propulsive technologies",
+      subtitle: "Landing Rocket, Propulsive tech",
       description: "Researching vertical takeoff/landing control laws and hybrid fuels.",
     },
     {
       title: "SPACEPORT 2027",
-      subtitle: "Participation in the prestigious competition",
+      subtitle: "International competition",
       description: "Representing CET globally at the premier international rocketry cup.",
     },
   ];
 
   return (
-    <section id="roadmap" className="min-h-[80vh] flex items-center py-20 px-4">
-      <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-24">
-          THE ROADMAP
-        </h2>
+    <section id="roadmap" className="relative min-h-[80vh] flex items-center py-20 px-4 overflow-hidden">
+      {/* Background/Top gradient transitions */}
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-1" />
 
-        <div className="relative">
-          {/* Horizontal line for desktop */}
-          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white/20 -translate-y-1/2 hidden md:block" />
+      <div className="max-w-4xl mx-auto w-full relative z-10">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-[1px] w-12 bg-white/20" />
+            <div className="px-3 py-1 bg-transparent border border-white/20 text-white text-[10px] uppercase tracking-widest font-semibold rounded-sm">
+              Our Journey
+            </div>
+            <div className="h-[1px] w-12 bg-white/20" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
+            The Roadmap
+          </h2>
+        </div>
 
-          {/* Desktop timeline */}
-          <div className="hidden md:grid grid-cols-6 gap-4 relative">
+        <div className="relative mt-12">
+          {/* Vertical timeline line in the center */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-violet-500/20 via-white/20 to-violet-500/20 -translate-x-1/2" />
+
+          {/* Timeline Nodes */}
+          <div className="space-y-12 relative">
             {nodes.map((node, index) => {
               const isEven = index % 2 === 0;
+              const isActive = activeNode === index;
               return (
-                <div key={index} className="relative h-48 flex items-center justify-center group cursor-pointer">
-                  {/* Dot */}
-                  <div className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.3)] transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(255,255,255,1)] group-hover:scale-110 relative z-10" />
+                <div
+                  key={index}
+                  onClick={() => setActiveNode(isActive ? null : index)}
+                  className="relative flex items-center justify-center min-h-[90px] w-full group cursor-pointer select-none"
+                >
+                  {/* Central Node Dot */}
+                  <div className={`absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${
+                    isActive
+                      ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
+                      : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                  }`} />
 
-                  {/* Vertical connector line (main text) */}
+                  {/* Content Container */}
                   <div
-                    className={`absolute left-1/2 -translate-x-1/2 w-[1px] h-8 bg-white/20 ${
-                      isEven ? "bottom-1/2 mb-2" : "top-1/2 mt-2"
-                    }`}
-                  />
-
-                  {/* Vertical connector line (description, only on hover) */}
-                  <div
-                    className={`absolute left-1/2 -translate-x-1/2 w-[1px] h-8 bg-white/10 transition-all duration-300 opacity-0 group-hover:opacity-100 ${
-                      isEven ? "top-1/2 mt-2" : "bottom-1/2 mb-2"
-                    }`}
-                  />
-
-                  {/* Content Card (Title & Subtitle) */}
-                  <div
-                    className={`absolute left-0 right-0 px-2 text-center ${
-                      isEven ? "bottom-1/2 mb-12" : "top-1/2 mt-12"
-                    }`}
-                  >
-                    <p className="text-xs font-semibold text-white tracking-wider mb-1">
-                      {node.title}
-                    </p>
-                    <p className="text-[10px] text-slate-400 leading-normal max-w-[150px] mx-auto">
-                      {node.subtitle}
-                    </p>
-                  </div>
-
-                  {/* Description Card (Appears opposite to the title/subtitle card on hover) */}
-                  <div
-                    className={`absolute left-0 right-0 px-4 text-center transition-all duration-300 pointer-events-none ${
+                    className={`w-[45%] absolute transition-all duration-300 ${
                       isEven
-                        ? "top-1/2 mt-12 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
-                        : "bottom-1/2 mb-12 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
+                        ? "right-1/2 pr-6 sm:pr-8 text-right"
+                        : "left-1/2 pl-6 sm:pl-8 text-left"
+                    } ${
+                      isActive
+                        ? (isEven ? "-translate-x-1" : "translate-x-1")
+                        : (isEven ? "group-hover:-translate-x-1" : "group-hover:translate-x-1")
                     }`}
                   >
-                    <p className="text-[10.5px] text-slate-300 leading-relaxed max-w-[170px] mx-auto bg-slate-950/90 backdrop-blur-md p-3 rounded-lg border border-white/10 shadow-xl">
-                      {node.description}
-                    </p>
+                    <div className="inline-block max-w-full">
+                      <span className="text-[9px] sm:text-[10px] font-semibold text-violet-400 uppercase tracking-wider block">
+                        {node.subtitle}
+                      </span>
+                      <h3 className={`text-[11px] sm:text-xs font-bold tracking-wider uppercase mt-0.5 mb-1 transition-colors ${
+                        isActive ? "text-violet-400" : "text-white group-hover:text-violet-400"
+                      }`}>
+                        {node.title}
+                      </h3>
+                      <p className={`text-[9.5px] sm:text-[10.5px] text-slate-400 leading-relaxed font-normal overflow-hidden transition-all duration-300 ${
+                        isActive
+                          ? "max-h-24 opacity-100 mt-1.5"
+                          : "max-h-0 opacity-0 mt-0 pointer-events-none md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-hover:mt-1.5"
+                      }`}>
+                        {node.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
             })}
-          </div>
-
-          {/* Mobile timeline */}
-          <div className="md:hidden relative pl-6 space-y-8">
-            {/* Vertical timeline line for mobile */}
-            <div className="absolute left-[9px] top-2 bottom-2 w-[2px] bg-white/20" />
-
-            {nodes.map((node, index) => (
-              <div key={index} className="relative flex flex-col pl-6 group cursor-pointer">
-                {/* Dot */}
-                <div className="absolute left-[3px] top-1.5 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-all duration-300 group-hover:shadow-[0_0_12px_rgba(255,255,255,1)] group-hover:scale-110 z-10" />
-                
-                <div>
-                  <h4 className="text-sm font-semibold text-white tracking-wider">
-                    {node.title}
-                  </h4>
-                  <p className="text-xs text-slate-400 mt-1">
-                    {node.subtitle}
-                  </p>
-                  <p className="text-[11px] text-slate-400 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-16 group-hover:opacity-100 leading-relaxed">
-                    {node.description}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function HeroSection() {
 
       <div className="absolute bottom-8 left-8 z-10 hidden md:flex gap-5 items-center">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/velo_cet"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -44,7 +44,7 @@ export default function HeroSection() {
           </svg>
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/company/velo-cet/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
