@@ -32,12 +32,20 @@ export default function ProjectSD1000Section() {
             Our first model rocket of 1kg payload capacity with a max altitude of
             1km.
           </p>
-          <a
-            href="/brochure.pdf"
-            className="inline-block border border-white/30 px-3 py-1 sm:px-6 sm:py-2.5 uppercase text-[9px] sm:text-xs md:text-sm hover:bg-white/10 transition-all rounded-sm text-white"
-          >
-            DOWNLOAD BROCHURE
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="/brochure.pdf"
+              className="inline-block border border-white/30 px-3 py-1 sm:px-6 sm:py-2.5 uppercase text-[9px] sm:text-xs md:text-sm hover:border-white transition-all rounded-sm text-white"
+            >
+              DOWNLOAD BROCHURE
+            </a>
+            <a
+              href="#"
+              className="inline-block border border-white/30 px-3 py-1 sm:px-6 sm:py-2.5 uppercase text-[9px] sm:text-xs md:text-sm hover:border-white transition-all rounded-sm text-white"
+            >
+              VIEW IN 3D
+            </a>
+          </div>
         </div>
       </div>
     </section>
