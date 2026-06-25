@@ -189,7 +189,7 @@ export default function ContactSection() {
                 </svg>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@Velo_CET"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
