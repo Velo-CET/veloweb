@@ -45,7 +45,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative min-h-[80vh] flex items-center py-20 px-4">
+    <section id="contact" className="relative min-h-[80vh] flex items-center pt-20 pb-36 px-4">
       {/* Bottom transition shade to footer (fades to bg-slate-950) */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none z-10" />
 

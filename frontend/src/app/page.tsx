@@ -3,7 +3,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ProjectSD1000Section from "@/components/sections/ProjectSD1000Section";
 import ProjectNovaSection from "@/components/sections/ProjectNovaSection";
 import RoadmapSection from "@/components/sections/RoadmapSection";
-import SponsorshipsSection from "@/components/sections/SponsorshipsSection";
+import SponsorWishlistSection from "@/components/sections/SponsorWishlistSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Image from "next/image";
 
@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="relative z-10">
           <RoadmapSection />
-          <SponsorshipsSection />
+          <SponsorWishlistSection />
           <ContactSection />
         </div>
       </div>

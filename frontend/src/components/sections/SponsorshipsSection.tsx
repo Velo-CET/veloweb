@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SponsorshipsSection() {
   return (
     <section
@@ -29,10 +31,8 @@ export default function SponsorshipsSection() {
           >
             WATCH &amp; SUPPORT US
           </a>
-          <a
-            href="/sponsorships"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/sponsorship"
             className="flex items-center justify-center sm:justify-start gap-1.5 text-xs uppercase font-semibold text-white/85 hover:text-pink-500 transition-colors tracking-wider sm:ml-2"
           >
             <span>SPONSORSHIP TIERS</span>
@@ -48,7 +48,7 @@ export default function SponsorshipsSection() {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
