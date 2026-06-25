@@ -9,7 +9,6 @@ export default function ProjectSD1000Section() {
           src="/SD1000.webp"
           alt="SD1000 Rocket"
           fill
-          priority
           className="object-cover object-right"
         />
       </div>

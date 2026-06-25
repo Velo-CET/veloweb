@@ -5,6 +5,7 @@ import ProjectNovaSection from "@/components/sections/ProjectNovaSection";
 import RoadmapSection from "@/components/sections/RoadmapSection";
 import SponsorshipsSection from "@/components/sections/SponsorshipsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -15,21 +16,25 @@ export default function Home() {
       <ProjectNovaSection />
 
       {/* Remaining page container with starry sky background */}
-      <div
-        className="relative bg-slate-950"
-        style={{
-          backgroundImage: "url('/dark_sky.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
+      <div className="relative bg-slate-950 overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/dark_sky.webp"
+            alt="Starry Sky Background"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            quality={75}
+          />
+        </div>
         {/* Top fade-in transition from ProjectNovaSection (bg-slate-950) */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-10" />
 
-        <RoadmapSection />
-        <SponsorshipsSection />
-        <ContactSection />
+        <div className="relative z-10">
+          <RoadmapSection />
+          <SponsorshipsSection />
+          <ContactSection />
+        </div>
       </div>
     </>
   );

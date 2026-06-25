@@ -43,7 +43,7 @@ export default function RoadmapSection() {
       {/* Background/Top gradient transitions */}
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-1" />
 
-      <div className="max-w-4xl mx-auto w-full relative z-10">
+      <div className="max-w-4xl md:max-w-6xl mx-auto w-full relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 bg-white/20" />
@@ -57,15 +57,23 @@ export default function RoadmapSection() {
           </h2>
         </div>
 
-        <div className="relative mt-12">
+        {/* Mobile/Tablet Vertical Timeline */}
+        <div className="relative mt-12 md:hidden">
           {/* Vertical timeline line in the center */}
           <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-violet-500/20 via-white/20 to-violet-500/20 -translate-x-1/2" />
+
+          {/* Progress bar line */}
+          <div 
+            className="absolute left-1/2 top-0 w-[2px] bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.6)] -translate-x-1/2"
+            style={{ height: "50%" }}
+          />
 
           {/* Timeline Nodes */}
           <div className="space-y-12 relative">
             {nodes.map((node, index) => {
               const isEven = index % 2 === 0;
               const isActive = activeNode === index;
+              const isCompleted = index <= 2;
               return (
                 <div
                   key={index}
@@ -76,7 +84,9 @@ export default function RoadmapSection() {
                   <div className={`absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${
                     isActive
                       ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
-                      : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                      : isCompleted
+                        ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
+                        : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                   }`} />
 
                   {/* Content Container */}
@@ -104,6 +114,77 @@ export default function RoadmapSection() {
                         isActive
                           ? "max-h-24 opacity-100 mt-1.5"
                           : "max-h-0 opacity-0 mt-0 pointer-events-none md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-hover:mt-1.5"
+                      }`}>
+                        {node.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Desktop Horizontal Timeline */}
+        <div className="hidden md:block relative mt-24 mb-24 min-h-[350px]">
+          {/* Horizontal timeline line */}
+          <div 
+            className="absolute top-1/2 h-[2px] bg-gradient-to-r from-violet-500/20 via-white/20 to-violet-500/20 -translate-y-1/2"
+            style={{ left: `${100 / (nodes.length * 2)}%`, right: `${100 / (nodes.length * 2)}%` }}
+          />
+
+          {/* Progress bar line */}
+          <div 
+            className="absolute top-1/2 h-[2px] bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.6)] -translate-y-1/2"
+            style={{ left: `${100 / (nodes.length * 2)}%`, right: "50%" }}
+          />
+
+          {/* Timeline Nodes */}
+          <div className="flex justify-between items-center w-full relative h-full min-h-[350px]">
+            {nodes.map((node, index) => {
+              const isEven = index % 2 === 0;
+              const isActive = activeNode === index;
+              const isCompleted = index <= 2;
+              return (
+                <div
+                  key={index}
+                  onClick={() => setActiveNode(isActive ? null : index)}
+                  className="relative flex flex-col items-center justify-center group cursor-pointer select-none flex-1"
+                >
+                  {/* Central Node Dot */}
+                  <div className={`w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${
+                    isActive
+                      ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
+                      : isCompleted
+                        ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
+                        : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                  }`} />
+
+                  {/* Content Container */}
+                  <div
+                    className={`absolute w-44 text-center transition-all duration-300 ${
+                      isEven
+                        ? "bottom-full mb-6"
+                        : "top-full mt-6"
+                    } ${
+                      isActive
+                        ? (isEven ? "-translate-y-1" : "translate-y-1")
+                        : (isEven ? "group-hover:-translate-y-1" : "group-hover:translate-y-1")
+                    }`}
+                  >
+                    <div className="inline-block w-full">
+                      <span className="text-[10px] font-semibold text-violet-400 uppercase tracking-wider block">
+                        {node.subtitle}
+                      </span>
+                      <h3 className={`text-xs font-bold tracking-wider uppercase mt-0.5 mb-1 transition-colors ${
+                        isActive ? "text-violet-400" : "text-white group-hover:text-violet-400"
+                      }`}>
+                        {node.title}
+                      </h3>
+                      <p className={`text-[10.5px] text-slate-400 leading-relaxed font-normal overflow-hidden transition-all duration-300 ${
+                        isActive
+                          ? "max-h-24 opacity-100 mt-1.5"
+                          : "max-h-0 opacity-0 mt-0 pointer-events-none group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1.5"
                       }`}>
                         {node.description}
                       </p>

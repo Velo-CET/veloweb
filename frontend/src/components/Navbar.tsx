@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -30,11 +29,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full px-4 md:px-8 z-50 transition-all duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
-          } ${isScrolled
-            ? "py-3 md:py-4 bg-slate-950/75 backdrop-blur-md border-b border-white/5 shadow-lg"
-            : "py-4 md:py-8 bg-transparent"
-          }`}
+        className={`fixed top-0 left-0 w-full px-4 md:px-8 py-4 md:py-8 z-50 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         <div className="relative flex w-full items-center justify-between">
           <a href="#" className="flex items-center shrink-0">

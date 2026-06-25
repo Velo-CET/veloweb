@@ -9,7 +9,6 @@ export default function ProjectNovaSection() {
           src="/STFNova1.webp"
           alt="Nova-1 Motor"
           fill
-          priority
           className="object-cover object-right scale-x-[-1]"
         />
       </div>
