@@ -91,7 +91,7 @@ export default function ProjectPage() {
           </p>
           <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
             <Link
-              href="/sponsorship"
+              href="/support"
               className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
             >
               Support Our Projects

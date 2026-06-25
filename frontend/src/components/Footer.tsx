@@ -2,16 +2,19 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-white/5 relative z-10">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center">
           {/* Left: Branding & Description */}
-          <div className="flex flex-col items-center md:items-start max-w-sm">
+          <div className="flex flex-col items-center">
             <img
               src="/VeloCET-white-logo.svg"
               alt="VeloCET"
-              className="h-8 w-auto object-contain mb-3"
+              className="h-6 w-auto object-contain mb-2"
             />
-            <p className="text-xs text-slate-400 leading-relaxed">
-              CET&apos;s official model rocketry club. Defying gravity, defining innovation.
+            <p className="text-[10px] text-slate-400 leading-relaxed">
+              CET&apos;s official model rocketry club.
+            </p>
+            <p className="text-[10px] text-slate-400 leading-relaxed">
+              Defying gravity, defining innovation.
             </p>
           </div>
 
@@ -23,16 +26,16 @@ export default function Footer() {
             <a href="#roadmap" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
               Roadmap
             </a>
-            <a href="#support" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
+            <a href="/support" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
               Support
             </a>
-            <a href="#contact" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
+            <a href="/#contact" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
               Contact
             </a>
           </div>
 
           {/* Right: Related Links */}
-          <div className="flex flex-col items-center md:items-end gap-2">
+          <div className="flex flex-col items-center gap-2">
             <span className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">
               Related Links
             </span>
@@ -40,7 +43,7 @@ export default function Footer() {
               href="https://cet.ac.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold"
+              className="text-[9px] sm:text-[10px] text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold"
             >
               CET Website
             </a>
@@ -48,7 +51,7 @@ export default function Footer() {
               href="https://spaceportamericacup.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold"
+              className="text-[9px] sm:text-[10px] text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold"
             >
               Spaceport America Cup
             </a>

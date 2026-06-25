@@ -23,12 +23,18 @@ export default function SponsorWishlistSection() {
           Help VeloCET build better rockets by sponsoring essential equipment, electronics, manufacturing materials, and testing hardware.
         </p>
 
-        <div className="pt-4">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/wishlist"
+            href="/support"
             className="inline-block border border-[#ff0000] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white hover:text-[#ff0000] hover:scale-110 transition-all duration-300 rounded-full"
           >
-            View Wishlist
+            Support Our Mission
+          </Link>
+          <Link
+            href="/sponsorship"
+            className="inline-block border border-violet-300/30 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white hover:border-white hover:scale-110 transition-all duration-300 rounded-full"
+          >
+            Partner With Us
           </Link>
         </div>
       </div>

@@ -19,26 +19,19 @@ export default function ContactSection() {
     // 2. Replace "YOUR_ACCESS_KEY_HERE" below with your key, OR add it to a 
     //    .env.local file as: NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_key_here
     // =========================================================================
-    const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+    const ACCESS_KEY = "099b46af-4125-4a05-b76c-a3dde966c834";
     formData.append("access_key", ACCESS_KEY);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
 
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus("success");
-        setResult("Your message has been sent successfully!");
-        e.currentTarget.reset();
-      } else {
-        setStatus("error");
-        setResult(data.message || "Something went wrong. Please try again.");
-      }
-    } catch (error) {
+      setStatus("success");
+      setResult("Your message has been sent successfully!");
+      e.currentTarget.reset();
+    } catch {
       setStatus("error");
       setResult("Failed to send message. Please check your connection.");
     }

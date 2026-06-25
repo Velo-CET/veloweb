@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 
@@ -27,12 +26,6 @@ const comparisonFeatures = [
 ];
 
 export default function SponsorshipPage() {
-  const individualTiers = [
-    { amount: "$10", label: "Supporter", desc: "Covers materials for a fin set" },
-    { amount: "$50", label: "Builder", desc: "Funds a parachute deployment system" },
-    { amount: "$100", label: "Engineer", desc: "Sponsors a complete avionics bay" },
-  ];
-
   return (
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Background starry sky */}
@@ -103,34 +96,7 @@ export default function SponsorshipPage() {
           </div>
         </div> */}
 
-        {/* Wishlist CTA Card */}
-        <div className="relative overflow-hidden bg-transparent border border-transparent rounded-3xl p-8 sm:p-10 mb-20 text-center transition-all duration-500 group">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-red-500/5 rounded-full blur-[40px] pointer-events-none" />
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-white uppercase tracking-wider flex items-center justify-center" style={spaceGrotesk.style}>
-              Buy&nbsp;
-              <span className="inline-flex items-center text-[#ff0000]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 sm:w-6 h-6 mr-0.5">
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                </svg>
-              </span>
-              s&nbsp;a coffee
-            </h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              You can also help us in acquiring materials. Here we have provided the list of urgent items necessary for our current needs.
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/wishlist"
-                className="inline-block border border-[#ff0000] px-8 py-3 text-xs uppercase tracking-widest text-white hover:text-[#ff0000] hover:scale-110 transition-all duration-300 rounded-full"
-              >
-                View Wishlist
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Section 2: Corporate Sponsorships */}
+        {/* Corporate Sponsorships */}
         <div className="mb-10">
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
             <div className="flex flex-col items-center gap-3">

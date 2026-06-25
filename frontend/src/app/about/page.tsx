@@ -154,7 +154,7 @@ export default function AboutPage() {
             VeloCET relies on sponsorships and academic grants to procure raw composite materials, high-precision machining, avionics sensors, and safety infrastructure.
           </p>
           <Link
-            href="/sponsorship"
+            href="/support"
             className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
           >
             Support Our Mission

@@ -28,7 +28,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "ABOUT US", href: "/about" },
     { label: "PROJECTS", href: "/project" },
-    { label: "SUPPORT", href: "/sponsorship" }
+    { label: "SUPPORT", href: "/support" }
   ];
 
   return (
