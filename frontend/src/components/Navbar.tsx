@@ -85,16 +85,15 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {isOpen && (
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-[400ms] ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setIsOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 transition-opacity duration-[400ms] ${isOpen ? 'opacity-100' : 'opacity-0'}`} />
         <div
-          className="fixed inset-0 z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
+          className={`absolute right-0 top-0 h-full w-64 bg-slate-900 p-8 flex flex-col gap-6 shadow-xl transition-transform duration-[400ms] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          onClick={(e) => e.stopPropagation()}
         >
-          <div className="absolute inset-0 bg-black/60" />
-          <div
-            className="absolute left-0 top-0 h-full w-64 bg-slate-900 p-8 flex flex-col gap-6 shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
             <button
               onClick={() => setIsOpen(false)}
               className="self-end text-white/70 hover:text-violet-400 transition-all"
@@ -140,7 +139,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-      )}
     </>
   );
 }

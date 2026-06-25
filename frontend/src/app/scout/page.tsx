@@ -32,7 +32,7 @@ export default function ScoutRecruitmentPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-300/20 bg-violet-500/10 text-violet-300 text-xs font-medium mb-4">
             Recruitment Portal
           </div>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 uppercase tracking-wider">
+          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold mb-4 uppercase tracking-wider">
             Scout Recruitments
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">

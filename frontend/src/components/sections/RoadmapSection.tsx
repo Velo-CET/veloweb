@@ -69,7 +69,7 @@ export default function RoadmapSection() {
           />
 
           {/* Timeline Nodes */}
-          <div className="space-y-12 relative">
+          <div className="space-y-10 relative">
             {nodes.map((node, index) => {
               const isEven = index % 2 === 0;
               const isActive = activeNode === index;

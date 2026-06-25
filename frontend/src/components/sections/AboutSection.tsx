@@ -10,7 +10,7 @@ export default function AboutSection() {
 
       <div className="relative z-10 w-full py-20 px-4 md:px-8 flex justify-center">
         <div className="max-w-4xl text-center flex flex-col items-center">
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-5xl uppercase tracking-[0.15em] text-white leading-tight mb-8">
+          <h1 className="font-heading text-2xl sm:text-5xl md:text-6xl lg:text-5xl uppercase tracking-[0.15em] text-white leading-tight mb-8">
             CET&apos;S OFFICIAL
             <br />
             MODEL ROCKETRY CLUB
@@ -24,7 +24,7 @@ export default function AboutSection() {
               href="/about"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm uppercase font-semibold text-white/85 hover:text-white transition-colors tracking-wider mr-2"
+              className="flex items-center gap-1.5 text-sm uppercase font-semibold text-white/85 hover:text-white transition-colors tracking-wider"
             >
               <span>ABOUT US</span>
               <svg
@@ -40,12 +40,6 @@ export default function AboutSection() {
                 />
               </svg>
             </Link>
-            <a
-              href="/brochure.pdf"
-              className="inline-block border border-violet-300/30 px-6 py-2 uppercase text-sm hover:border-white transition-all rounded-sm"
-            >
-              DOWNLOAD BROCHURE
-            </a>
           </div>
         </div>
       </div>
