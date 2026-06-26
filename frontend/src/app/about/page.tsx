@@ -103,23 +103,28 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Our Mission Section - Centered layout with no photo placeholder */}
-        <div className="max-w-3xl mx-auto text-center mb-24 space-y-6">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <div className="h-[1px] w-12 bg-white/20" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">Our Mission</h2>
-            <div className="h-[1px] w-12 bg-white/20" />
+        {/* Vision & Mission Section - 2 columns on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 max-w-5xl mx-auto">
+          <div className="text-center space-y-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="h-[1px] flex-1 bg-white/20" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">Our Vision</h2>
+              <div className="h-[1px] flex-1 bg-white/20" />
+            </div>
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              To propel the next generation of Aerospace Engineers and Researchers through innovation, education, and collaboration. We catalyse advancements in rocketry via hands-on experimentation, global competitions, and industry partnerships, empowering members to contribute to cutting-edge research and share findings with the broader scientific community.
+            </p>
           </div>
-          <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-            We aim to provide hands-on aerospace engineering experience to students at the College of Engineering,
-            Trivandrum (CET). Through comprehensive rocket design cycles, custom fabrication, and live launch campaigns, 
-            we cultivate deep technical expertise in advanced propulsion, flight electronics, flight dynamics, and composite structures.
-          </p>
-          <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Our team is organized into subsystems: Propulsion, Avionics, Structures, Payload, Media & Design, and Management.
-            Each subsystem is led by experienced students who mentor newer members through the engineering lifecycle,
-            preparing them for professional aerospace careers and systems integration.
-          </p>
+          <div className="text-center space-y-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="h-[1px] flex-1 bg-white/20" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider">Our Mission</h2>
+              <div className="h-[1px] flex-1 bg-white/20" />
+            </div>
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              To design, build, and launch innovative model rockets that push the boundaries of student-led aerospace. Through practical learning and interdisciplinary teamwork, we make VeloCET a launchpad for aspiring aerospace engineers—equipping them with real-world skills, fostering research excellence, and representing our institution at top national and global rocketry competitions.
+            </p>
+          </div>
         </div>
 
         {/* Subsystems Section */}
