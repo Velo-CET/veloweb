@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 
@@ -22,8 +21,8 @@ const comparisonFeatures = [
   { name: "Logo on website", bronze: true, silver: true, gold: true, title: true },
   { name: "Social media promo", bronze: true, silver: true, gold: true, title: true },
   { name: "Logo on rocket / apparel", bronze: false, silver: true, gold: true, title: true },
-  { name: "Exclusive event access", bronze: false, silver: false, gold: true, title: true },
   { name: "Recruitment access", bronze: false, silver: true, gold: true, title: true },
+  { name: "Exclusive event access", bronze: false, silver: false, gold: true, title: true },
   { name: "Naming rights", bronze: false, silver: false, gold: false, title: true },
 ];
 
@@ -32,6 +31,7 @@ const corporateTiers = [
     name: "Title Sponsor",
     price: "₹2,00,000+",
     borderClass: "border-amber-500/50",
+    shimmerColor: "rgba(245, 158, 11, 0.08)",
     benefits: [
       "Largest logo on rocket, apparel & merchandise",
       "Exclusive naming rights for flagship vehicle & events",
@@ -48,6 +48,7 @@ const corporateTiers = [
     price: "₹1,00,000+",
     borderClass: "border-yellow-400/60",
     glow: true,
+    shimmerColor: "rgba(250, 204, 21, 0.08)",
     benefits: [
       "Large logo on rocket fins & promotional materials",
       "Logo on team apparel & event backdrops",
@@ -63,6 +64,7 @@ const corporateTiers = [
     name: "Silver Sponsor",
     price: "₹50,000 - ₹1,00,000",
     borderClass: "border-slate-400/40",
+    shimmerColor: "rgba(148, 163, 184, 0.08)",
     benefits: [
       "Logo on team apparel, website & club profiles",
       "Social media & event material recognition",
@@ -75,6 +77,7 @@ const corporateTiers = [
     name: "Bronze Sponsor",
     price: "₹25,000 - ₹50,000",
     borderClass: "border-orange-700/50",
+    shimmerColor: "rgba(194, 65, 12, 0.08)",
     benefits: [
       "Name & logo in sponsorship reports & project docs",
       "Recognition on event posters & promotional material",
@@ -164,10 +167,10 @@ export default function SponsorshipPage() {
 
             </div>
             <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-              Partnering with VeloCET provides your organization with unique branding exposure, CSR alignment, and direct recruitment access to top-tier STEM engineering students.
+              Partnering with VeloCITY provides your organization with unique branding exposure, strategic CSR alignment, and direct recruitment access to top-tier STEM engineering students. 
             </p>
             <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-              Through this collaboration, partners receive direct access to top aerospace, structures, software, and electronics talent, alongside prominent brand visibility at local and national launches and events. We offer logo placement on high-end models and team merchandise, creating a clear CSR alignment with pioneering student engineering projects.
+              Through this collaboration, partners receive direct access to top aerospace, structures, software, and electronics talent, alongside prominent brand visibility at local, national and global launches and events. We offer tailored sponsorship tiers: Title, Gold, Silver, and Bronze; to match your organization's goals. The details are given below.
             </p>
           </div>
 
@@ -176,9 +179,15 @@ export default function SponsorshipPage() {
             {corporateTiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`bg-slate-900/20 border ${tier.borderClass} hover:border-violet-500/30 rounded-2xl p-6 flex flex-col hover:scale-[1.02] transition-all duration-300 group`}
+                className={`bg-slate-900/20 border ${tier.borderClass} rounded-2xl p-6 flex flex-col hover:scale-[1.02] transition-all duration-300 group overflow-hidden relative`}
                 style={tier.glow ? { boxShadow: "0 0 18px -2px rgba(250, 204, 21, 0.25)" } : undefined}
               >
+                <div
+                  className="absolute inset-0 pointer-events-none -translate-x-full group-hover:translate-x-full transition-none group-hover:transition-all duration-700 ease-in-out"
+                  style={{
+                    background: `linear-gradient(105deg, transparent 30%, ${tier.shimmerColor} 45%, transparent 60%)`,
+                  }}
+                />
                 <div className="text-xs font-bold text-violet-400 uppercase tracking-widest mb-1">{tier.name}</div>
                 <div className="text-lg font-extrabold text-white mb-4">{tier.price}</div>
                 <ul className="space-y-2 flex-1">
@@ -241,27 +250,30 @@ export default function SponsorshipPage() {
               </table>
             </div>
 
-            <div className="flex items-center gap-6 justify-center mt-10 relative">
-              <div className="relative group/btn inline-block">
-                <button className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-115 transition-all duration-200 rounded-sm">
-                  DONATE
+            <div className="flex flex-col items-center gap-6 mt-10">
+              <div className="flex items-center gap-6">
+                <button className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm">
+                  Brochure
                 </button>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 md:top-1/2 md:-translate-y-1/2 md:left-full md:translate-x-0 md:ml-4 w-64 p-3 bg-slate-900 border border-slate-800 text-[11px] text-slate-300 rounded-lg opacity-0 pointer-events-none group-hover/btn:opacity-100 transition-opacity duration-300 shadow-xl z-30 text-center md:text-left leading-relaxed">
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-8 border-transparent border-b-slate-900 md:hidden" />
-                  <div className="absolute right-full top-1/2 -translate-y-1/2 border-8 border-transparent border-r-slate-900 hidden md:block" />
-                  Tiers will be auto applied and we will contact you for the proceedings
+
+                <a
+                  href="mailto:velocet@cet.ac.in"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-violet-400 hover:text-white hover:scale-105 transition-all duration-200"
+                >
+                  Send Us an Email
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </a>
+              </div>
+              <div className="text-xs text-center mt-8">
+                <p className="text-slate-300 mb-2">For partnership enquiries, reach out directly to our strategic and financial leads</p>
+                <div className="space-y-0.5">
+                  <a href="tel:+919671317977" className="text-slate-400 hover:text-white transition-colors">Strategic Innovation Lead: +91 96713 17977</a>
+                  <br />
+                  <a href="tel:+918078311418" className="text-slate-400 hover:text-white transition-colors">Chief Financial Officer: +91 8078 311 418</a>
                 </div>
               </div>
-
-              <Link
-                href="/project"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-violet-400 hover:text-white hover:scale-105 transition-all duration-200"
-              >
-                Sponsor a Part
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </Link>
             </div>
           </div>
         </div>
