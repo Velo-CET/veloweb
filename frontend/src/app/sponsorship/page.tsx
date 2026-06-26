@@ -19,11 +19,70 @@ const CrossIcon = () => (
 );
 
 const comparisonFeatures = [
-  { name: "Logo on website", bronze: true, silver: true, gold: true, platinum: true },
-  { name: "Social media promo", bronze: true, silver: true, gold: true, platinum: true },
-  { name: "Logo on rocket models", bronze: false, silver: false, gold: true, platinum: true },
-  { name: "Exclusive event access", bronze: false, silver: false, gold: true, platinum: true },
-  { name: "Naming rights on projects", bronze: false, silver: false, gold: false, platinum: true },
+  { name: "Logo on website", bronze: true, silver: true, gold: true, title: true },
+  { name: "Social media promo", bronze: true, silver: true, gold: true, title: true },
+  { name: "Logo on rocket / apparel", bronze: false, silver: true, gold: true, title: true },
+  { name: "Exclusive event access", bronze: false, silver: false, gold: true, title: true },
+  { name: "Recruitment access", bronze: false, silver: true, gold: true, title: true },
+  { name: "Naming rights", bronze: false, silver: false, gold: false, title: true },
+];
+
+const corporateTiers = [
+  {
+    name: "Title Sponsor",
+    price: "₹2,00,000+",
+    borderClass: "border-amber-500/50",
+    benefits: [
+      "Largest logo on rocket, apparel & merchandise",
+      "Exclusive naming rights for flagship vehicle & events",
+      "Top billing in press & media coverage",
+      "Dedicated social media campaigns",
+      "Branding at workshops, outreach & VeloDay",
+      "Invitations to static fire tests & launch campaigns",
+      "Priority recruitment & internship access",
+      "Exclusive industry-category sponsorship",
+    ],
+  },
+  {
+    name: "Gold Sponsor",
+    price: "₹1,00,000+",
+    borderClass: "border-yellow-400/60",
+    glow: true,
+    benefits: [
+      "Large logo on rocket fins & promotional materials",
+      "Logo on team apparel & event backdrops",
+      "Featured social media campaigns",
+      "Recognition at competitions, workshops & tech talks",
+      "Branding at selected events",
+      "Certificate of appreciation",
+      "Student recruitment & internship access",
+      "Invitations to project demos & testing milestones",
+    ],
+  },
+  {
+    name: "Silver Sponsor",
+    price: "₹50,000 - ₹1,00,000",
+    borderClass: "border-slate-400/40",
+    benefits: [
+      "Logo on team apparel, website & club profiles",
+      "Social media & event material recognition",
+      "Mention in technical reports & presentations",
+      "Certificate of appreciation",
+      "Invitations to selected workshops & outreach events",
+    ],
+  },
+  {
+    name: "Bronze Sponsor",
+    price: "₹25,000 - ₹50,000",
+    borderClass: "border-orange-700/50",
+    benefits: [
+      "Name & logo in sponsorship reports & project docs",
+      "Recognition on event posters & promotional material",
+      "Social media shout-outs",
+      "Acknowledgment on VeloCET website",
+      "Recognition during club events & workshops",
+    ],
+  },
 ];
 
 export default function SponsorshipPage() {
@@ -112,6 +171,28 @@ export default function SponsorshipPage() {
             </p>
           </div>
 
+          {/* Corporate Tiers Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {corporateTiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={`bg-slate-900/20 border ${tier.borderClass} hover:border-violet-500/30 rounded-2xl p-6 flex flex-col hover:scale-[1.02] transition-all duration-300 group`}
+                style={tier.glow ? { boxShadow: "0 0 18px -2px rgba(250, 204, 21, 0.25)" } : undefined}
+              >
+                <div className="text-xs font-bold text-violet-400 uppercase tracking-widest mb-1">{tier.name}</div>
+                <div className="text-lg font-extrabold text-white mb-4">{tier.price}</div>
+                <ul className="space-y-2 flex-1">
+                  {tier.benefits.map((benefit, i) => (
+                    <li key={i} className="text-xs text-slate-400 leading-relaxed flex items-start gap-2">
+                      <span className="text-emerald-500 mt-0.5 shrink-0">•</span>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
           {/* Corporate Tiers Comparison Table */}
           <div className="max-w-4xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-8 text-center uppercase tracking-wider" style={spaceGrotesk.style}>Sponsorship Tiers Comparison</h3>
@@ -123,16 +204,16 @@ export default function SponsorshipPage() {
                       Sponsorship Perks
                     </th>
                     <th className="p-4 sm:p-5 text-center text-xs font-bold uppercase tracking-widest text-white">
-                      Bronze <span className="block text-[10px] text-slate-500 normal-case mt-0.5">₹5k - ₹10k</span>
+                      Bronze <span className="block text-[10px] text-slate-500 normal-case mt-0.5">₹25k - ₹50k</span>
                     </th>
                     <th className="p-4 sm:p-5 text-center text-xs font-bold uppercase tracking-widest text-white">
-                      Silver <span className="block text-[10px] text-slate-500 normal-case mt-0.5"> ₹10k -  ₹30k</span>
+                      Silver <span className="block text-[10px] text-slate-500 normal-case mt-0.5">₹50k - ₹1L</span>
                     </th>
                     <th className="p-4 sm:p-5 text-center text-xs font-bold uppercase tracking-widest text-white">
-                      Gold <span className="block text-[10px] text-slate-500 normal-case mt-0.5"> ₹30k -  ₹50k</span>
+                      Gold <span className="block text-[10px] text-slate-500 normal-case mt-0.5">₹1L - ₹2L</span>
                     </th>
                     <th className="p-4 sm:p-5 text-center text-s font-bold uppercase tracking-widest text-white">
-                      Platinum <span className="block text-[10px] text-slate-500 normal-case mt-0.5"> ₹50k+</span>
+                      Title <span className="block text-[10px] text-slate-500 normal-case mt-0.5">₹2L+</span>
                     </th>
                   </tr>
                 </thead>
@@ -152,7 +233,7 @@ export default function SponsorshipPage() {
                         {feature.gold ? <CheckIcon /> : <CrossIcon />}
                       </td>
                       <td className="p-4 sm:p-5 text-center">
-                        {feature.platinum ? <CheckIcon /> : <CrossIcon />}
+                        {feature.title ? <CheckIcon /> : <CrossIcon />}
                       </td>
                     </tr>
                   ))}
