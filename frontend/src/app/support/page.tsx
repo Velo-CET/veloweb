@@ -59,7 +59,7 @@ export default function SupportPage() {
                   Fuel The Future
                 </h2>
                 <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                  We are a student-run team with zero administrative overhead — every rupee goes directly toward
+                  We are a student-run team with zero administrative overhead - every rupee goes directly toward
                   materials, electronics, propulsion testing, and launch operations. Your support helps us
                   build high-powered rockets and compete on the global stage.
                 </p>

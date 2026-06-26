@@ -99,7 +99,7 @@ export default function AboutPage() {
             Who We Are
           </h1>
           <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            VeloCET is CET&apos;s official model rocketry club — a dedicated team of student engineers designing, building, and launching high-powered model rockets.
+            VeloCET is CET&apos;s official model rocketry club - a dedicated team of student engineers designing, building, and launching high-powered model rockets.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
               <div className="h-[1px] flex-1 bg-white/20" />
             </div>
             <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-              To design, build, and launch innovative model rockets that push the boundaries of student-led aerospace. Through practical learning and interdisciplinary teamwork, we make VeloCET a launchpad for aspiring aerospace engineers—equipping them with real-world skills, fostering research excellence, and representing our institution at top national and global rocketry competitions.
+              To design, build, and launch innovative model rockets that push the boundaries of student-led aerospace. Through practical learning and interdisciplinary teamwork, we make VeloCET a launchpad for aspiring aerospace engineers - equipping them with real-world skills, fostering research excellence, and representing our institution at top national and global rocketry competitions.
             </p>
           </div>
         </div>

@@ -72,44 +72,73 @@ export default function ProjectPage() {
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-1" />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none z-1" />
 
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[calc(100vh-12rem)] mt-6">
+      <div className="relative z-10 max-w-6xl mx-auto mt-6 space-y-24">
 
-        {/* Left Side: Info */}
-        <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-violet-500/20 bg-violet-950/20 text-violet-400 text-xs font-semibold uppercase tracking-widest">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-            3D Interactive Showcase
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl font-extrabold text-white uppercase tracking-wider leading-tight"
-            style={spaceGrotesk.style}
-          >
-            Launch Vehicle
-          </h1>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Interact directly with our flagship aerospace design. Built with light-weight carbon composites, integrated avionics bays, and precision aerodynamic fin profiles, this rocket serves as our main research platform for high-power telemetry.
-          </p>
-          <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
-            <Link
-              href="/support#sponsor-a-part"
-              className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
+        {/* SD-1000 */}
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+          <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-violet-500/20 bg-violet-950/20 text-violet-400 text-xs font-semibold uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              3D Interactive Showcase
+            </div>
+            <h1
+              className="text-4xl sm:text-5xl font-extrabold text-white uppercase tracking-wider leading-tight"
+              style={spaceGrotesk.style}
             >
-              Support Our Projects
-            </Link>
+              SD-1000
+            </h1>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Our first model rocket project, aiming for 1km altitude with 1kg payload capacity. This rocket originally served as our competition model for (cancelled) IGNITE'25, ready for launch!
+            </p>
+            <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+              <Link
+                href="/support#sponsor-a-part"
+                className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
+              >
+                Support Our Projects
+              </Link>
+            </div>
+          </div>
+
+          <div className="col-span-12 md:col-span-7 w-full flex justify-center">
+            {mounted ? (
+              <RocketCanvas />
+            ) : (
+              <div className="w-full h-[55vh] sm:h-[60vh] md:h-[70vh] bg-slate-900/10 border border-slate-800/40 rounded-3xl flex items-center justify-center">
+                <span className="text-xs uppercase tracking-widest text-slate-500 animate-pulse">Initializing 3D Scene...</span>
+              </div>
+            )}
           </div>
         </div>
 
-      {/* Right Side: 3D Model Display */}
-      <div className="col-span-12 md:col-span-7 w-full flex justify-center">
-        {mounted ? (
-          <RocketCanvas />
-        ) : (
-          <div className="w-full h-[55vh] sm:h-[60vh] md:h-[70vh] bg-slate-900/10 border border-slate-800/40 rounded-3xl flex items-center justify-center">
-            <span className="text-xs uppercase tracking-widest text-slate-500 animate-pulse">Initializing 3D Scene...</span>
+        {/* DART */}
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+          <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-violet-500/20 bg-violet-950/20 text-violet-400 text-xs font-semibold uppercase tracking-widest">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              Deployment-Avionics-Recovery-Testing
+            </div>
+            <h1
+              className="text-4xl sm:text-5xl font-extrabold text-white uppercase tracking-wider leading-tight"
+              style={spaceGrotesk.style}
+            >
+              DART
+            </h1>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Our model rocket built for testing deployment subsystems with a 50m altitude, designed to launch from our own college premises.
+            </p>
           </div>
-        )}
-      </div>
+
+          <div className="col-span-12 md:col-span-7 w-full flex justify-center">
+            <div className="w-full h-[55vh] sm:h-[60vh] md:h-[70vh] bg-slate-900/10 border border-slate-800/40 rounded-3xl flex items-center justify-center">
+              <span className="text-xs uppercase tracking-widest text-slate-500">Image Placeholder</span>
+            </div>
+          </div>
+        </div>
+
     </div>
-    </div >
+    </div>
   );
 }

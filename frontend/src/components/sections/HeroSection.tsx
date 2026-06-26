@@ -79,13 +79,13 @@ export default function HeroSection() {
         href="/scout"
         className="absolute bottom-8 right-8 z-10 max-md:bottom-8 max-md:left-1/2 max-md:-translate-x-1/2 block transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
       >
-        <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 px-6 border border-white/10 flex items-center gap-6 max-md:justify-center hover:bg-white/15 transition-colors">
+        <div className="bg-white/10 backdrop-blur-md rounded-lg py-4 px-8 border border-white/10 flex items-center gap-6 max-md:justify-center hover:bg-white/15 transition-colors">
           <div className="flex flex-col items-center">
             <span className="text-[10px] max-md:text-[8px] uppercase tracking-widest text-white/70">WEEK</span>
             <span className="text-4xl max-md:text-2xl font-bold text-white leading-none">1</span>
           </div>
           <div className="w-px h-10 bg-white/10" />
-          <div className="text-sm max-md:text-[10px] text-white leading-tight font-medium">
+          <div className="text-sm max-md:text-[10px] text-white leading-tight font-medium md:font-normal">
             Scout
             <br />
             Recruitment Tasks

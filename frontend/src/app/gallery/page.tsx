@@ -128,7 +128,7 @@ export default function GalleryPage() {
                         Our Gallery
                     </h1>
                     <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                        A visual chronicle of VeloCET's journey—engineering workshops, test beds, engine fires, and high-altitude launches.
+                        A visual chronicle of VeloCET's journey - engineering workshops, test beds, engine fires, and high-altitude launches.
                     </p>
                 </div>
 

@@ -133,7 +133,7 @@ export default function SponsorshipPage() {
             <div className="text-center sm:text-left mb-10">
               <h2 className="text-2xl font-bold text-white uppercase tracking-wider mb-4">Individual Contributions</h2>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base max-w-3xl">
-                Every dollar goes directly toward materials, components, and launch operations. We are a student-run club with zero administrative overhead — 100% of donations fund our model rockets.
+                Every dollar goes directly toward materials, components, and launch operations. We are a student-run club with zero administrative overhead - 100% of donations fund our model rockets.
               </p>
             </div>
 
