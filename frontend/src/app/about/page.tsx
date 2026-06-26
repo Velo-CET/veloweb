@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   const subsystems = [
@@ -72,17 +73,28 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-24 pb-16 px-4 min-h-screen bg-slate-950 text-slate-100">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative pt-24 pb-16 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
+      {/* Background starry sky */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/dark_sky.webp"
+          alt="Starry Sky Background"
+          fill
+          className="object-cover object-center opacity-45"
+          sizes="100vw"
+          quality={75}
+        />
+        <div className="absolute inset-0 bg-slate-950/40" />
+      </div>
+
+      {/* Top fade-in transition */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-1" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none z-1" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-20 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-500/10 rounded-full blur-[80px] pointer-events-none" />
-
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/20 bg-violet-950/20 text-violet-400 text-xs font-semibold uppercase tracking-wider mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-            About Us
-          </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 uppercase tracking-wider">
             Who We Are
           </h1>
@@ -124,10 +136,10 @@ export default function AboutPage() {
             {subsystems.map((sys) => (
               <div
                 key={sys.name}
-                className="relative flex flex-col transition-all duration-300 hover:-translate-y-1 group"
+                className="relative flex flex-col group"
               >
                 {/* Icon with direct styling */}
-                <div className={`${sys.iconColor} mb-4 group-hover:scale-110 transition-transform duration-300 w-fit`}>
+                <div className={`${sys.iconColor} mb-4 w-fit`}>
                   {sys.icon}
                 </div>
                 
@@ -142,6 +154,15 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/project"
+              className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-110 transition-all duration-200 rounded-sm"
+            >
+              OUR WORKS
+            </Link>
           </div>
         </div>
 

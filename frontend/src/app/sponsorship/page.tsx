@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 
@@ -159,7 +160,7 @@ export default function SponsorshipPage() {
               </table>
             </div>
 
-            <div className="flex justify-center mt-10 relative">
+            <div className="flex items-center gap-6 justify-center mt-10 relative">
               <div className="relative group/btn inline-block">
                 <button className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-115 transition-all duration-200 rounded-sm">
                   DONATE
@@ -170,6 +171,16 @@ export default function SponsorshipPage() {
                   Tiers will be auto applied and we will contact you for the proceedings
                 </div>
               </div>
+
+              <Link
+                href="/project"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-violet-400 hover:text-white hover:scale-105 transition-all duration-200"
+              >
+                Sponsor a Part
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: "/project",
         permanent: true,
       },
+      {
+        source: "/wishlist",
+        destination: "/support#sponsor-a-part",
+        permanent: true,
+      },
     ];
   },
 };

@@ -28,6 +28,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "ABOUT US", href: "/about" },
     { label: "PROJECTS", href: "/project" },
+    { label: "GALLERY", href: "/gallery" },
     { label: "SUPPORT", href: "/support" }
   ];
 

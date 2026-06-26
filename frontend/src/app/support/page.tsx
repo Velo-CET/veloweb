@@ -2,20 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import { wishlistData } from "@/data/wishlist";
+import WishlistTable from "@/components/WishlistTable";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
 export default function SupportPage() {
-  const topItems = wishlistData.filter((item) => !item.sponsored).slice(0, 3);
-
-  const priorityStyles: Record<string, string> = {
-    High: "bg-red-500/10 text-red-400 border border-red-500/20",
-    Medium: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
-    Low: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-  };
-
   return (
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Background starry sky */}
@@ -42,7 +35,15 @@ export default function SupportPage() {
             Support Our Journey
           </h1>
           <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Every contribution brings us closer to the launch pad. Help VeloCET represent India at the Spaceport America Cup.
+            Every contribution brings us closer to the launch pad. Help VeloCET represent India at the{" "}
+            <a
+              href="https://spaceportamericacup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white-200 hover:text-violet-300 hover:underline transition-colors font-semibold"
+            >
+              Spaceport America Cup
+            </a>.
           </p>
         </div>
 
@@ -93,47 +94,18 @@ export default function SupportPage() {
         </div>
 
         {/* Section 2: Wishlist Summary */}
-        <div className="mb-16">
+        <div id="sponsor-a-part" className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mb-4" style={spaceGrotesk.style}>
               Sponsor a Part
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-              Help us acquire the components and materials we urgently need. Each item you sponsor goes
-              directly into building and testing our next launch vehicle.
+              We urgently need these items for our current progress. The list provided is actively maintained and updated
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
-            {topItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-slate-900/20 border border-slate-800/60 hover:border-violet-500/30 rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">{item.name}</h3>
-                  <span className={`px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ${priorityStyles[item.priority]}`}>
-                    {item.priority}
-                  </span>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">{item.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-mono font-bold text-violet-400">{item.price}</span>
-                  <span className="px-2 py-0.5 rounded bg-slate-800/60 border border-slate-700/50 uppercase tracking-wider text-[10px] text-slate-400">
-                    {item.category}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/wishlist"
-              className="inline-block border border-[#ff0000] px-8 py-3 text-xs uppercase tracking-widest text-white hover:text-[#ff0000] hover:scale-110 transition-all duration-300 rounded-full"
-            >
-              View Full Wishlist
-            </Link>
+          <div className="max-w-5xl mx-auto">
+            <WishlistTable items={wishlistData} />
           </div>
         </div>
 
