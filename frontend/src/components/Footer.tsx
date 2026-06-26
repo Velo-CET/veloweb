@@ -55,6 +55,14 @@ export default function Footer() {
             >
               Spaceport America Cup
             </a>
+            <a
+              href="https://clubs.cet.ac.in/clubs/velocet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[9px] sm:text-[10px] text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold"
+            >
+              CET Clubs
+            </a>
           </div>
         </div>
 
