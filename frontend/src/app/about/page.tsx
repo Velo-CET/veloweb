@@ -80,9 +80,9 @@ export default function AboutPage() {
           src="/dark_sky.webp"
           alt="Starry Sky Background"
           fill
-          className="object-cover object-center opacity-45"
+          className="object-cover object-center opacity-45 hidden sm:block"
           sizes="100vw"
-          quality={75}
+          quality={90}
         />
         <div className="absolute inset-0 bg-slate-950/40" />
       </div>

@@ -97,9 +97,9 @@ export default function SponsorshipPage() {
           src="/dark_sky.webp"
           alt="Starry Sky Background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hidden sm:block"
           sizes="100vw"
-          quality={75}
+          quality={90}
         />
         <div className="absolute inset-0 bg-slate-950/40" />
       </div>

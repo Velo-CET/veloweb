@@ -109,9 +109,9 @@ export default function GalleryPage() {
                     src="/dark_sky.webp"
                     alt="Starry Sky Background"
                     fill
-                    className="object-cover object-center opacity-45"
+                    className="object-cover object-center opacity-45 hidden sm:block"
                     sizes="100vw"
-                    quality={75}
+                    quality={90}
                     priority
                 />
                 <div className="absolute inset-0 bg-slate-950/40" />

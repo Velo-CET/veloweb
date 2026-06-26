@@ -22,9 +22,9 @@ export default function Home() {
             src="/dark_sky.webp"
             alt="Starry Sky Background"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden sm:block"
             sizes="100vw"
-            quality={75}
+            quality={90}
           />
         </div>
         {/* Top fade-in transition from ProjectNovaSection (bg-slate-950) */}
