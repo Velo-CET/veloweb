@@ -20,10 +20,10 @@ export default function Footer() {
 
           {/* Center: Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-            <a href="#" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
+            <a href="/" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
               Home
             </a>
-            <a href="#roadmap" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
+            <a href="/#roadmap" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
               Roadmap
             </a>
             <a href="/support" className="text-[10px] sm:text-xs text-slate-400 hover:text-white transition-colors uppercase tracking-widest font-semibold">
