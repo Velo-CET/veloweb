@@ -167,7 +167,7 @@ export default function SponsorshipPage() {
 
             </div>
             <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-              Partnering with VeloCITY provides your organization with unique branding exposure, strategic CSR alignment, and direct recruitment access to top-tier STEM engineering students. 
+              Partnering with VeloCET provides your organization with unique branding exposure, strategic CSR alignment, and direct recruitment access to top-tier STEM engineering students. 
             </p>
             <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
               Through this collaboration, partners receive direct access to top aerospace, structures, software, and electronics talent, alongside prominent brand visibility at local, national and global launches and events. We offer tailored sponsorship tiers: Title, Gold, Silver, and Bronze; to match your organization's goals. The details are given below.
