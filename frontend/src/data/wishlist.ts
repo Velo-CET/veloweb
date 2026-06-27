@@ -1,10 +1,10 @@
 export interface WishlistItem {
-  id: number;
+  id: string | number;
   name: string;
   description: string;
   price: string;
-  priority: "High" | "Medium" | "Low";
-  category: string;
+  priority?: "High" | "Medium" | "Low";
+  category?: string;
   sponsored: boolean;
   buyUrl: string;
 }

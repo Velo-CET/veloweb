@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
-import { wishlistData } from "@/data/wishlist";
 import WishlistTable from "@/components/WishlistTable";
+import { getWishlistItems } from "@/services/notion";
+import { WishlistItem } from "@/data/wishlist";
+
+export const dynamic = "force-dynamic";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-export default function SupportPage() {
+export default async function SupportPage() {
+  let items: WishlistItem[] = [];
+  let errorMsg = "";
+
+  try {
+    items = await getWishlistItems();
+  } catch (err: any) {
+    console.error("Notion fetch failed:", err);
+    errorMsg = err.message || "Failed to load live wishlist items from Notion.";
+  }
   return (
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Background starry sky */}
@@ -105,7 +117,19 @@ export default function SupportPage() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <WishlistTable items={wishlistData} />
+            {errorMsg ? (
+              <div className="p-8 rounded-2xl border border-red-500/20 bg-red-950/10 text-center space-y-4 max-w-2xl mx-auto backdrop-blur-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-rose-500 mx-auto">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                </svg>
+                <h3 className="text-lg font-bold text-white uppercase tracking-wider">Failed to Load Wishlist</h3>
+                <p className="text-slate-400 text-sm max-w-md mx-auto">
+                  {errorMsg}
+                </p>
+              </div>
+            ) : (
+              <WishlistTable items={items} />
+            )}
           </div>
         </div>
 
