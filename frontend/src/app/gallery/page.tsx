@@ -99,6 +99,14 @@ export default function GalleryPage() {
             image: "/gallery/11.jpg",
             gridClass: "lg:col-span-3 lg:row-span-1 md:col-span-2 md:row-span-1",
         },
+        {
+            id: "teststand-12",
+            title: "Test Stand Setup",
+            tag: "",
+            description: "The complete setup of our static test stand used for motor runs.",
+            image: "/gallery/teststand.jpeg",
+            gridClass: "lg:col-span-1 lg:row-span-1 md:col-span-1 md:row-span-1",
+        },
     ];
 
     return (
