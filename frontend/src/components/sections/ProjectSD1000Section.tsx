@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectSD1000Section() {
   return (
@@ -38,10 +39,8 @@ export default function ProjectSD1000Section() {
             >
               DOWNLOAD BROCHURE
             </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/project#sd1000"
               className="flex items-center gap-1.5 text-xs md:text-sm uppercase font-semibold text-white/85 hover:text-white transition-colors tracking-wider ml-2"
             >
               <span>VIEW IN 3D</span>
@@ -57,7 +56,7 @@ export default function ProjectSD1000Section() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

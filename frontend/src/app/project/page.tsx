@@ -83,7 +83,7 @@ export default function ProjectPage() {
       <div className="relative z-10 max-w-6xl mx-auto mt-6 space-y-16 animate-fade-in">
 
         {/* SD-1000 Translucent Card */}
-        <div className="relative overflow-hidden bg-slate-950/20 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl hover:border-white/20 transition-all duration-300">
+        <div id="sd1000" className="relative overflow-hidden bg-slate-950/20 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl hover:border-white/20 transition-all duration-300">
 
           {/* Starry Sky Background with translucent effect */}
           <div className="absolute inset-0 z-0 pointer-events-none">
@@ -139,54 +139,13 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Nova-1 Translucent Card */}
-        <div className="relative overflow-hidden bg-slate-950/20 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl hover:border-white/20 transition-all duration-300">
-
-          <div className="flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
-            {/* Left Column: Info */}
-            <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
-              <h2
-                className="text-4xl sm:text-5xl font-extrabold text-white uppercase tracking-wider leading-tight"
-                style={spaceGrotesk.style}
-              >
-                NOVA-1
-              </h2>
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Our in-house solid rocket motor. Capable of producing a peak thrust of 600N and fueled by KNSB.
-              </p>
-              <div className="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
-                <a
-                  href="/Nova1_Technical_Report.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-rose-500/20 bg-rose-500/10 hover:bg-rose-500/20 px-6 py-3.5 text-xs uppercase tracking-widest text-white hover:border-rose-500 hover:scale-105 transition-all duration-200 rounded-sm"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-rose-500">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                  </svg>
-                  Technical Report
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column: Flat Image Showcase */}
-            <div className="col-span-12 md:col-span-7 w-full flex justify-center">
-              <div className="w-full h-[350px] sm:h-[400px] md:h-[450px] relative bg-slate-950/40 border border-white/5 rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl">
-                <Image
-                  src="/STFNova1.webp"
-                  alt="Nova-1 Motor"
-                  fill
-                  className="object-cover object-right rounded-3xl rotate-90 scale-150"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* DART Glassy Card */}
         <div className="relative overflow-hidden bg-slate-950/20 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl hover:border-white/20 transition-all duration-300">
-
+          {/* Diagonal Glassy Coming Soon Banner */}
+          <div className="absolute top-6 right-[-30px] rotate-45 bg-violet-500/25 border border-violet-500/30 text-violet-300 text-[9px] font-bold uppercase tracking-widest px-10 py-1.5 backdrop-blur-md shadow-lg z-20">
+            Coming Soon
+          </div>
+          
           <div className="flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
             {/* Left Column: Info */}
             <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
