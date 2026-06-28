@@ -59,7 +59,7 @@ export default function HeroSection() {
           </svg>
         </a>
         <a
-                href="https://www.youtube.com/@Velo_CET"
+          href="https://www.youtube.com/@Velo_CET"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"
@@ -86,9 +86,9 @@ export default function HeroSection() {
           </div>
           <div className="w-px h-10 bg-white/10" />
           <div className="text-sm max-md:text-[10px] text-white leading-tight font-medium md:font-normal">
-            Scout
+            SCOUT
             <br />
-            Recruitment Tasks
+            Recruitment
           </div>
         </div>
       </Link>

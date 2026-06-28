@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
+import { fetchSponsorItems } from "@/services/sheets";
+
+export const dynamic = "force-dynamic";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -88,7 +91,9 @@ const corporateTiers = [
   },
 ];
 
-export default function SponsorshipPage() {
+export default async function SponsorshipPage() {
+  const { items: sponsorItems, lastUpdated } = await fetchSponsorItems();
+
   return (
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Background starry sky */}
@@ -250,7 +255,64 @@ export default function SponsorshipPage() {
               </table>
             </div>
 
-            <div className="flex flex-col items-center gap-6 mt-10">
+            {sponsorItems && sponsorItems.length > 0 && (
+              <div className="mt-20 max-w-4xl mx-auto w-full">
+                <h3 className={`text-xl font-bold text-white text-center uppercase tracking-wider ${lastUpdated ? "mb-2" : "mb-8"}`} style={spaceGrotesk.style}>
+                  Items Available for Sponsorship
+                </h3>
+                {lastUpdated && (
+                  <p className="text-xs text-slate-500 mb-8 text-center uppercase tracking-widest font-mono">
+                    {lastUpdated}
+                  </p>
+                )}
+                <div className="overflow-x-auto bg-slate-900/20 border border-slate-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+                  <table className="w-full min-w-[600px] border-collapse text-left bg-transparent">
+                    <thead>
+                      <tr className="bg-transparent text-xs font-bold uppercase tracking-widest text-slate-400 border-b border-slate-800/80">
+                        <th className="px-4 py-4">Item</th>
+                        <th className="px-4 py-4">Description</th>
+                        <th className="px-4 py-4">Est. Cost</th>
+                        <th className="px-4 py-4 text-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-transparent text-sm text-slate-300">
+                      {sponsorItems.map((item, idx) => (
+                        <tr key={idx} className="border-b border-slate-900 last:border-0 bg-transparent hover:bg-slate-900/10 transition-colors">
+                          <td className="px-4 py-4 font-semibold text-white">
+                            {item.item}
+                          </td>
+                          <td className="px-4 py-4 text-slate-400 leading-relaxed max-w-xs">
+                            {item.description}
+                          </td>
+                          <td className="px-4 py-4 font-mono font-bold text-white">
+                            {item.estCost}
+                          </td>
+                          <td className="px-4 py-4 text-right">
+                            {item.purchaseLink ? (
+                              <a
+                                href={item.purchaseLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 border border-violet-500/30 px-4 py-2 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm text-center"
+                              >
+                                Sponsor
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                              </a>
+                            ) : (
+                              <span className="text-xs text-slate-500 italic">Enquire to Sponsor</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-col items-center gap-6 mt-16">
               <div className="flex items-center gap-6">
                 <button className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm">
                   Brochure

@@ -21,7 +21,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "VeloCET | Defying Gravity, Defining Innovation",
+  title: "VeloCET",
   description:
     "CET's official model rocketry club. Building rockets, breaking limits.",
 };

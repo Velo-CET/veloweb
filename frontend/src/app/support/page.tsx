@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import WishlistTable from "@/components/WishlistTable";
-import { getWishlistItems } from "@/services/notion";
+import { getWishlistItems } from "@/services/sheets";
 import { WishlistItem } from "@/data/wishlist";
 
 export const dynamic = "force-dynamic";
@@ -13,13 +13,16 @@ const spaceGrotesk = Space_Grotesk({
 
 export default async function SupportPage() {
   let items: WishlistItem[] = [];
+  let lastUpdated: string | null = null;
   let errorMsg = "";
 
   try {
-    items = await getWishlistItems();
+    const res = await getWishlistItems();
+    items = res.items;
+    lastUpdated = res.lastUpdated;
   } catch (err: any) {
-    console.error("Notion fetch failed:", err);
-    errorMsg = err.message || "Failed to load live wishlist items from Notion.";
+    console.error("Sponsor sheet fetch failed:", err);
+    errorMsg = err.message || "Failed to load live wishlist items from the sponsor sheet.";
   }
   return (
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
@@ -108,12 +111,17 @@ export default async function SupportPage() {
         {/* Section 2: Wishlist Summary */}
         <div id="sponsor-a-part" className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider mb-4" style={spaceGrotesk.style}>
+            <h2 className={`text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider ${lastUpdated ? "mb-2" : "mb-4"}`} style={spaceGrotesk.style}>
               Sponsor a Part
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-4">
               We urgently need these items for our current progress. The list provided is actively maintained and updated
             </p>
+            {lastUpdated && (
+              <p className="text-xs text-slate-500 text-center uppercase tracking-widest font-mono">
+                {lastUpdated}
+              </p>
+            )}
           </div>
 
           <div className="max-w-5xl mx-auto">
