@@ -52,6 +52,30 @@ h4 {
   animation: textGlowBreathing 4s ease-in-out infinite alternate;
 }
 
+@keyframes simpleFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up-stagger {
+  opacity: 0;
+  animation: simpleFadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-delay-1 {
+  animation-delay: 200ms;
+}
+
+.stagger-delay-2 {
+  animation-delay: 450ms;
+}
+
 @keyframes sparkGlowBreathing {
   0% {
     filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.2));

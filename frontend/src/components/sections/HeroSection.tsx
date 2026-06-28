@@ -20,10 +20,14 @@ export default function HeroSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full px-4">
         <h1 className="text-2xl md:text-6xl lg:text-6xl uppercase font-bold text-white tracking-[0.05em] sm:tracking-[0.15em] animate-glow-breathing leading-tight">
           <span className="block -translate-x-2 md:-translate-x-10">
-            DEFYING GRAVITY,
+            <span className="block animate-fade-in-up-stagger stagger-delay-1">
+              DEFYING GRAVITY,
+            </span>
           </span>
           <span className="block translate-x-2 md:translate-x-10 mt-2 md:mt-4">
-            DEFINING INNOVATION
+            <span className="block animate-fade-in-up-stagger stagger-delay-2">
+              DEFINING INNOVATION
+            </span>
           </span>
         </h1>
       </div>
