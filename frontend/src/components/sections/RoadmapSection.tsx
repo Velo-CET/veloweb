@@ -98,12 +98,21 @@ export default function RoadmapSection() {
             className="absolute left-1/2 top-0 w-[2px] bg-violet-500 -translate-x-1/2 transition-all duration-[2000ms] ease-out z-10"
             style={{ height: isInView ? "50%" : "0%" }}
           >
-            {/* Leading Edge Spark / Pointer Head at the bottom */}
+            {/* Leading Edge Comet Head at the bottom */}
             <svg
-              viewBox="0 0 10 10"
-              className="absolute bottom-0 left-1/2 w-4.5 h-4.5 text-violet-400 fill-current animate-spark-glow-vertical"
+              viewBox="0 0 12 24"
+              className="absolute bottom-0 left-1/2 w-3.5 h-7 text-violet-400 fill-current animate-spark-glow-vertical"
             >
-              <polygon points="1,2 5,8 9,2" />
+              <defs>
+                <linearGradient id="comet-grad-vertical" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(139, 92, 246, 0)" />
+                  <stop offset="60%" stopColor="rgba(139, 92, 246, 0.4)" />
+                  <stop offset="90%" stopColor="rgba(167, 139, 250, 0.85)" />
+                  <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
+                </linearGradient>
+              </defs>
+              <path d="M 3,18 C 3,12 6,0 6,0 C 6,0 9,12 9,18 C 9,20 7.5,22 6,22 C 4.5,22 3,20 3,18 Z" fill="url(#comet-grad-vertical)" />
+              <circle cx="6" cy="18" r="1.2" fill="#ffffff" />
             </svg>
           </div>
 
@@ -183,12 +192,21 @@ export default function RoadmapSection() {
               width: isInView ? "41.67%" : "0%" 
             }}
           >
-            {/* Leading Edge Spark / Pointer Head */}
+            {/* Leading Edge Comet Head */}
             <svg
-              viewBox="0 0 10 10"
-              className="absolute right-0 top-1/2 w-4.5 h-4.5 text-violet-400 fill-current animate-spark-glow-horizontal"
+              viewBox="0 0 24 12"
+              className="absolute right-0 top-1/2 w-7 h-3.5 text-violet-400 fill-current animate-spark-glow-horizontal"
             >
-              <polygon points="2,1 8,5 2,9" />
+              <defs>
+                <linearGradient id="comet-grad-horizontal" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(139, 92, 246, 0)" />
+                  <stop offset="60%" stopColor="rgba(139, 92, 246, 0.4)" />
+                  <stop offset="90%" stopColor="rgba(167, 139, 250, 0.85)" />
+                  <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
+                </linearGradient>
+              </defs>
+              <path d="M 18,3 C 12,3 0,6 0,6 C 0,6 12,9 18,9 C 20,9 22,7.5 22,6 C 22,4.5 20,3 18,3 Z" fill="url(#comet-grad-horizontal)" />
+              <circle cx="18" cy="6" r="1.2" fill="#ffffff" />
             </svg>
           </div>
 

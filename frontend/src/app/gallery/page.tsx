@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import StarfieldCanvas from "@/components/StarfieldCanvas";
 
@@ -140,7 +142,8 @@ export default function GalleryPage() {
                         return (
                             <div
                                 key={item.id}
-                                className={`relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40 backdrop-blur-md transition-all duration-500 group ${item.gridClass}`}
+                                className={`relative overflow-hidden rounded-xl border border-white/10 bg-slate-900/40 backdrop-blur-md transition-all duration-500 group ${item.gridClass} cursor-pointer select-none`}
+                                onTouchStart={() => {}}
                             >
                                 {/* Visual Content (Image or Video) */}
                                 <div className="absolute inset-0 z-0">
@@ -163,14 +166,14 @@ export default function GalleryPage() {
                                         />
                                     )}
                                     {/* Gradient overlays */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-                                    <div className="absolute inset-0 bg-violet-950/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-70 group-hover:opacity-90 group-active:opacity-90 transition-opacity duration-300" />
+                                    <div className="absolute inset-0 bg-violet-950/10 mix-blend-overlay opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
                                 </div>
 
                                 {/* Content Overlay */}
                                 <div className="absolute inset-0 z-10 p-6 flex flex-col justify-end">
-                                    {/* Tag and Title container - slides up slightly on hover */}
-                                    <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                    {/* Tag and Title container - slides up slightly on hover/touch */}
+                                    <div className="transform translate-y-3 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-out">
                                         <span className="inline-block text-[10px] uppercase tracking-widest text-violet-400 font-bold bg-violet-950/50 px-2 py-0.5 rounded-sm border border-violet-500/20 mb-2">
                                             {item.tag}
                                         </span>
@@ -179,8 +182,8 @@ export default function GalleryPage() {
                                         </h3>
                                     </div>
 
-                                    {/* Description - fades and slides in from below on hover */}
-                                    <p className="text-xs text-slate-300 mt-2 leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out delay-75">
+                                    {/* Description - fades and slides in from below on hover/touch */}
+                                    <p className="text-xs text-slate-300 mt-2 leading-relaxed opacity-0 group-hover:opacity-100 group-active:opacity-100 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 transition-all duration-500 ease-out delay-75">
                                         {item.description}
                                     </p>
                                 </div>
