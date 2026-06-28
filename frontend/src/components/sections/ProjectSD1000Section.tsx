@@ -34,7 +34,7 @@ export default function ProjectSD1000Section() {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="/brochure.pdf"
+              href="https://drive.google.com/file/d/1ix3yctiWQaz6kCo6hCj1cJ_PT690cWDd/view?usp=drive_link"
               className="inline-block border border-white/30 px-4 py-2 sm:px-6 sm:py-2.5 uppercase text-xs md:text-sm hover:border-white transition-all rounded-sm text-white"
             >
               DOWNLOAD BROCHURE
