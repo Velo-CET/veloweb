@@ -43,6 +43,7 @@ h4 {
   0% {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 0 6px rgba(167, 139, 250, 0.15);
   }
+
   100% {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 0 14px rgba(167, 139, 250, 0.4), 0 0 24px rgba(167, 139, 250, 0.15);
   }
@@ -52,11 +53,36 @@ h4 {
   animation: textGlowBreathing 4s ease-in-out infinite alternate;
 }
 
+@keyframes textRevealLeftToRight {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-20px);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+.animate-reveal-ltr {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.loaded .animate-reveal-ltr {
+  opacity: 1;
+  animation: textRevealLeftToRight 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @keyframes simpleFadeInUp {
   from {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -81,6 +107,7 @@ h4 {
     filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.2));
     transform: translate(25%, -50%) scale(0.95);
   }
+
   100% {
     filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 12px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
     transform: translate(25%, -50%) scale(1.15);
@@ -96,6 +123,7 @@ h4 {
     filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.2));
     transform: translate(-50%, 25%) scale(0.95);
   }
+
   100% {
     filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 12px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
     transform: translate(-50%, 25%) scale(1.15);

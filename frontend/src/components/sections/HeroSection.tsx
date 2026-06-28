@@ -20,12 +20,12 @@ export default function HeroSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full px-4">
         <h1 className="text-2xl md:text-6xl lg:text-6xl uppercase font-bold text-white tracking-[0.05em] sm:tracking-[0.15em] animate-glow-breathing leading-tight">
           <span className="block -translate-x-2 md:-translate-x-10">
-            <span className="block animate-fade-in-up-stagger stagger-delay-1">
+            <span className="inline-block animate-reveal-ltr stagger-delay-1">
               DEFYING GRAVITY,
             </span>
           </span>
           <span className="block translate-x-2 md:translate-x-10 mt-2 md:mt-4">
-            <span className="block animate-fade-in-up-stagger stagger-delay-2">
+            <span className="inline-block animate-reveal-ltr stagger-delay-2">
               DEFINING INNOVATION
             </span>
           </span>
@@ -82,18 +82,36 @@ export default function HeroSection() {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-8 right-8 z-10 max-md:bottom-8 max-md:left-1/2 max-md:-translate-x-1/2 block">
+      {/* Mobile Scroll Down Icon (bottom left, animated) */}
+      <div className="absolute bottom-8 left-6 md:hidden z-10 flex flex-col items-center gap-1 opacity-80 select-none">
+        <span className="text-[8px] uppercase tracking-widest text-white/50 font-bold mb-1">SCROLL</span>
+        <svg
+          className="w-4 h-4 text-white/70 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
+
+      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-8 right-4 md:right-8 z-10 block">
         <Link
           href="/scout"
           className="block transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-lg py-4 px-8 border border-white/10 flex items-center gap-6 max-md:justify-center hover:bg-white/15 transition-colors">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg py-3 px-4 md:py-4 md:px-8 border border-white/10 flex items-center gap-4 md:gap-6 hover:bg-white/15 transition-colors">
             <div className="flex flex-col items-center">
-              <span className="text-[10px] max-md:text-[8px] uppercase tracking-widest text-white/70">WEEK</span>
-              <span className="text-4xl max-md:text-2xl font-bold text-white leading-none">1</span>
+              <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-white/70">WEEK</span>
+              <span className="text-3xl md:text-4xl font-bold text-white leading-none">3</span>
             </div>
-            <div className="w-px h-10 bg-white/10" />
-            <div className="text-sm max-md:text-[10px] text-white leading-tight font-medium md:font-normal">
+            <div className="w-px h-8 md:h-10 bg-white/10" />
+            <div className="text-xs md:text-sm text-white leading-tight font-medium md:font-normal">
               SCOUT
               <br />
               Recruitment

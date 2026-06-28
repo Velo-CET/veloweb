@@ -3,6 +3,7 @@ import { Geist_Mono, Orbitron, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${orbitron.variable} ${geistMono.variable} h-full`}>
       <body className="bg-slate-950 text-white min-h-full flex flex-col antialiased">
+        <LoadingScreen />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
