@@ -19,22 +19,22 @@ export default function RoadmapSection() {
     {
       title: "SD1OOO",
       subtitle: "Our first model rocket",
-      description: "Launched our first 1kg payload solid rocket, reaching a 1km ceiling.",
+      description: "Designed and Developed our first 1kg payload solid rocket, reaching a 1km ceiling.",
     },
     {
       title: "COMPETITION MODEL",
       subtitle: "Oct 2026",
-      description: "Developing complex system architectures for national rocketry challenges.",
+      description: "Our Spaceport America Cup 2027 model.",
     },
     {
       title: "ADVANCED TECH RESEARCH",
-      subtitle: "Landing Rocket, Propulsive tech",
-      description: "Researching vertical takeoff/landing control laws and hybrid fuels.",
+      subtitle: "Active guidance Tech",
+      description: "Researching and developing our guidance payload.",
     },
     {
       title: "SPACEPORT 2027",
       subtitle: "International competition",
-      description: "Representing CET globally at the premier international rocketry cup.",
+      description: "Representing CET globally at the premier SA Cup 2027.",
     },
   ];
 
@@ -82,17 +82,17 @@ export default function RoadmapSection() {
                 >
                   {/* Central Node Dot */}
                   <div className={`absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${isActive
-                      ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
-                      : isCompleted
-                        ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
-                        : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                    ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
+                    : isCompleted
+                      ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
+                      : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                     }`} />
 
                   {/* Content Container */}
                   <div
                     className={`w-[45%] absolute transition-all duration-300 ${isEven
-                        ? "right-1/2 pr-6 sm:pr-8 text-right"
-                        : "left-1/2 pl-6 sm:pl-8 text-left"
+                      ? "right-1/2 pr-6 sm:pr-8 text-right"
+                      : "left-1/2 pl-6 sm:pl-8 text-left"
                       } ${isActive
                         ? (isEven ? "-translate-x-1" : "translate-x-1")
                         : (isEven ? "group-hover:-translate-x-1" : "group-hover:translate-x-1")
@@ -107,8 +107,8 @@ export default function RoadmapSection() {
                         {node.title}
                       </h3>
                       <p className={`text-[9.5px] sm:text-[10.5px] text-slate-400 leading-relaxed font-normal overflow-hidden transition-all duration-300 ${isActive
-                          ? "max-h-24 opacity-100 mt-1.5"
-                          : "max-h-0 opacity-0 mt-0 pointer-events-none md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-hover:mt-1.5"
+                        ? "max-h-24 opacity-100 mt-1.5"
+                        : "max-h-0 opacity-0 mt-0 pointer-events-none md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-hover:mt-1.5"
                         }`}>
                         {node.description}
                       </p>
@@ -148,17 +148,17 @@ export default function RoadmapSection() {
                 >
                   {/* Central Node Dot */}
                   <div className={`w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${isActive
-                      ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
-                      : isCompleted
-                        ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
-                        : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                    ? "scale-125 shadow-[0_0_15px_rgba(139,92,246,0.8)] bg-violet-400 border-white"
+                    : isCompleted
+                      ? "shadow-[0_0_8px_rgba(139,92,246,0.5)] bg-violet-500 border-slate-950 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.8)]"
+                      : "shadow-[0_0_8px_rgba(255,255,255,0.4)] group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                     }`} />
 
                   {/* Content Container */}
                   <div
                     className={`absolute w-44 text-center transition-all duration-300 ${isEven
-                        ? "bottom-full mb-6"
-                        : "top-full mt-6"
+                      ? "bottom-full mb-6"
+                      : "top-full mt-6"
                       } ${isActive
                         ? (isEven ? "-translate-y-1" : "translate-y-1")
                         : (isEven ? "group-hover:-translate-y-1" : "group-hover:translate-y-1")
@@ -173,8 +173,8 @@ export default function RoadmapSection() {
                         {node.title}
                       </h3>
                       <p className={`text-[10.5px] text-slate-400 leading-relaxed font-normal overflow-hidden transition-all duration-300 ${isActive
-                          ? "max-h-24 opacity-100 mt-1.5"
-                          : "max-h-0 opacity-0 mt-0 pointer-events-none group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1.5"
+                        ? "max-h-24 opacity-100 mt-1.5"
+                        : "max-h-0 opacity-0 mt-0 pointer-events-none group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1.5"
                         }`}>
                         {node.description}
                       </p>

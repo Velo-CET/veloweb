@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -6,7 +8,7 @@ export default function AboutPage() {
     {
       name: "Propulsion",
       desc: "Design and testing of solid rocket motors, injectors, and nozzle systems.",
-      textColor: "group-hover:text-violet-400",
+      textColor: "group-hover:text-violet-400 group-active:text-violet-400",
       iconColor: "text-violet-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -18,7 +20,7 @@ export default function AboutPage() {
     {
       name: "Avionics",
       desc: "Flight computers, telemetry, GPS tracking, and data logging systems.",
-      textColor: "group-hover:text-cyan-400",
+      textColor: "group-hover:text-cyan-400 group-active:text-cyan-400",
       iconColor: "text-cyan-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -29,7 +31,7 @@ export default function AboutPage() {
     {
       name: "Structures",
       desc: "Airframe design, composite layup, fins, and nose cone manufacturing.",
-      textColor: "group-hover:text-emerald-400",
+      textColor: "group-hover:text-emerald-400 group-active:text-emerald-400",
       iconColor: "text-emerald-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -40,7 +42,7 @@ export default function AboutPage() {
     {
       name: "Payload",
       desc: "Launch pads, ignition systems, telemetry ground stations, and safety.",
-      textColor: "group-hover:text-orange-400",
+      textColor: "group-hover:text-orange-400 group-active:text-orange-400",
       iconColor: "text-orange-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -51,7 +53,7 @@ export default function AboutPage() {
     {
       name: "Media & Design",
       desc: "Dual-deployment parachute systems, ejection charges, and descent analysis.",
-      textColor: "group-hover:text-rose-400",
+      textColor: "group-hover:text-rose-400 group-active:text-rose-400",
       iconColor: "text-rose-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -62,7 +64,7 @@ export default function AboutPage() {
     {
       name: "Management",
       desc: "Sponsorships, outreach, social media, and team operations.",
-      textColor: "group-hover:text-amber-400",
+      textColor: "group-hover:text-amber-400 group-active:text-amber-400",
       iconColor: "text-amber-400",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -99,7 +101,7 @@ export default function AboutPage() {
             Who We Are
           </h1>
           <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            VeloCET is CET&apos;s official model rocketry club - a dedicated team of student engineers designing, building, and launching high-powered model rockets.
+            VeloCET is <a href="https://cet.ac.in" target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:text-violet-300 hover:underline transition-colors font-medium">CET</a>&apos;s official model rocketry club - a dedicated team of student engineers designing, building, and launching high-powered model rockets.
           </p>
         </div>
 
@@ -141,7 +143,8 @@ export default function AboutPage() {
             {subsystems.map((sys) => (
               <div
                 key={sys.name}
-                className="relative flex flex-col group"
+                className="relative flex flex-col group cursor-pointer select-none"
+                onTouchStart={() => {}}
               >
                 {/* Icon with direct styling */}
                 <div className={`${sys.iconColor} mb-4 w-fit`}>

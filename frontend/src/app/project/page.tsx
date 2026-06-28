@@ -145,7 +145,7 @@ export default function ProjectPage() {
           <div className="absolute top-6 right-[-30px] rotate-45 bg-violet-500/25 border border-violet-500/30 text-violet-300 text-[9px] font-bold uppercase tracking-widest px-10 py-1.5 backdrop-blur-md shadow-lg z-20">
             Coming Soon
           </div>
-          
+
           <div className="flex flex-col md:grid md:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
             {/* Left Column: Info */}
             <div className="col-span-12 md:col-span-5 space-y-6 text-center md:text-left">
@@ -155,8 +155,11 @@ export default function ProjectPage() {
               >
                 DART
               </h2>
+              <p className="text-xs sm:text-sm font-semibold tracking-widest text-slate-300" style={spaceGrotesk.style}>
+                Deployment, Avionics, Recovery & Testing
+              </p>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Our model rocket built for testing deployment subsystems with a 50m altitude, designed to launch from our own college premises.
+                Our model rocket built for testing deployment subsystems with a 150 - 200m altitude, designed to launch from our own college premises.
               </p>
             </div>
 

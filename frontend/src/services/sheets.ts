@@ -48,7 +48,22 @@ export function parseSponsorCSV(csvText: string): SponsorItem[] {
   const itemIndex = headers.indexOf("item");
   const descIndex = headers.indexOf("description");
   const costIndex = headers.indexOf("est cost");
-  const linkIndex = headers.indexOf("purchase link");
+  
+  // Find URL column index by checking common header names, fallback to any containing 'link' or 'url'
+  const urlHeaders = ["purchase link", "url", "link", "website", "buy link", "purchase url", "buying page"];
+  let linkIndex = -1;
+  for (const name of urlHeaders) {
+    const idx = headers.indexOf(name);
+    if (idx !== -1) {
+      linkIndex = idx;
+      break;
+    }
+  }
+  if (linkIndex === -1) {
+    linkIndex = headers.findIndex(h => h.includes("link") || h.includes("url"));
+  }
+
+  const isUrlColumnFound = linkIndex !== -1;
 
   // Fallback order helper: if any header is not matched, we fallback to default indices
   const getVal = (row: string[], index: number, fallbackIndex: number) => {
@@ -63,7 +78,7 @@ export function parseSponsorCSV(csvText: string): SponsorItem[] {
     const item = getVal(row, itemIndex, 0);
     const description = getVal(row, descIndex, 1);
     const estCost = getVal(row, costIndex, 2);
-    const purchaseLink = getVal(row, linkIndex, 3);
+    const purchaseLink = isUrlColumnFound ? (row[linkIndex] || "") : "";
 
     // Skip row if it has no content in key fields
     if (!item && !description && !estCost) continue;
@@ -168,7 +183,7 @@ export async function getWishlistItems(): Promise<{ items: WishlistItem[]; lastU
       description: item.description,
       price: price || "TBD",
       sponsored: false,
-      buyUrl: item.purchaseLink || "#",
+      buyUrl: item.purchaseLink || "",
     };
   });
   return { items: mapped, lastUpdated };
