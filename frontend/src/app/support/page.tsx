@@ -4,6 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import WishlistTable from "@/components/WishlistTable";
 import { getWishlistItems } from "@/services/sheets";
 import { WishlistItem } from "@/data/wishlist";
+import StarfieldCanvas from "@/components/StarfieldCanvas";
 
 export const dynamic = "force-dynamic";
 
@@ -28,14 +29,7 @@ export default async function SupportPage() {
     <div className="relative pt-24 pb-20 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
       {/* Background starry sky */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/dark_sky.webp"
-          alt="Starry Sky Background"
-          fill
-          className="object-cover object-center hidden sm:block"
-          sizes="100vw"
-          quality={90}
-        />
+        <StarfieldCanvas />
         <div className="absolute inset-0 bg-slate-950/40" />
       </div>
 

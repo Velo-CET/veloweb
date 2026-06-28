@@ -34,6 +34,50 @@ h4 {
   border-radius: 3px;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
+}
+
+@keyframes textGlowBreathing {
+  0% {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 0 6px rgba(167, 139, 250, 0.15);
+  }
+  100% {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 0 14px rgba(167, 139, 250, 0.4), 0 0 24px rgba(167, 139, 250, 0.15);
+  }
+}
+
+.animate-glow-breathing {
+  animation: textGlowBreathing 4s ease-in-out infinite alternate;
+}
+
+@keyframes sparkGlowBreathing {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.2));
+    transform: translate(50%, -50%) scale(0.95);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 12px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+    transform: translate(50%, -50%) scale(1.15);
+  }
+}
+
+.animate-spark-glow-horizontal {
+  animation: sparkGlowBreathing 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes sparkGlowBreathingVertical {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.4)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.2));
+    transform: translate(-50%, 50%) scale(0.95);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 12px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+    transform: translate(-50%, 50%) scale(1.15);
+  }
+}
+
+.animate-spark-glow-vertical {
+  animation: sparkGlowBreathingVertical 2.5s ease-in-out infinite alternate;
 }

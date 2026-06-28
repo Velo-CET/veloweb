@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ProjectSD1000Section() {
   return (
@@ -24,41 +25,43 @@ export default function ProjectSD1000Section() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-1 pointer-events-none" />
 
       <div className="absolute inset-0 z-10 flex items-center justify-start pl-6 pr-6 md:pl-16 lg:pl-24">
-        <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-3 sm:mb-4 md:mb-6">
-            SD1OOO
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-sm sm:max-w-none">
-            Our first model rocket of 1kg payload capacity with a max altitude of
-            1km.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="https://drive.google.com/file/d/1ix3yctiWQaz6kCo6hCj1cJ_PT690cWDd/view?usp=drive_link"
-              className="inline-block border border-white/30 px-4 py-2 sm:px-6 sm:py-2.5 uppercase text-xs md:text-sm hover:border-white transition-all rounded-sm text-white"
-            >
-              DOWNLOAD BROCHURE
-            </a>
-            <Link
-              href="/project#sd1000"
-              className="flex items-center gap-1.5 text-xs md:text-sm uppercase font-semibold text-white/85 hover:text-white transition-colors tracking-wider ml-2"
-            >
-              <span>VIEW IN 3D</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-3.5 h-3.5"
+        <ScrollReveal variant="fadeInLeft" duration={900} threshold={0.15}>
+          <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-3 sm:mb-4 md:mb-6">
+              SD1OOO
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-sm sm:max-w-none">
+              Our first model rocket of 1kg payload capacity with a max altitude of
+              1km.
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="https://drive.google.com/file/d/1ix3yctiWQaz6kCo6hCj1cJ_PT690cWDd/view?usp=drive_link"
+                className="inline-block border border-white/30 px-4 py-2 sm:px-6 sm:py-2.5 uppercase text-xs md:text-sm hover:border-white transition-all rounded-sm text-white"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+                DOWNLOAD BROCHURE
+              </a>
+              <Link
+                href="/project#sd1000"
+                className="flex items-center gap-1.5 text-xs md:text-sm uppercase font-semibold text-white/85 hover:text-white transition-colors tracking-wider ml-2"
+              >
+                <span>VIEW IN 3D</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="w-3.5 h-3.5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

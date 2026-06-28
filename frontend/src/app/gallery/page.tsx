@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StarfieldCanvas from "@/components/StarfieldCanvas";
 
 interface GalleryItem {
     id: string;
@@ -113,15 +114,7 @@ export default function GalleryPage() {
         <div className="relative pt-32 pb-24 px-4 min-h-screen bg-slate-950 text-slate-100 overflow-hidden">
             {/* Background starry sky */}
             <div className="absolute inset-0 z-0 pointer-events-none">
-                <Image
-                    src="/dark_sky.webp"
-                    alt="Starry Sky Background"
-                    fill
-                    className="object-cover object-center opacity-45 hidden sm:block"
-                    sizes="100vw"
-                    quality={90}
-                    priority
-                />
+                <StarfieldCanvas />
                 <div className="absolute inset-0 bg-slate-950/40" />
             </div>
 

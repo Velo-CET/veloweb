@@ -1,9 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function RoadmapSection() {
   const [activeNode, setActiveNode] = useState<number | null>(null);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
 
   const nodes = [
     {
@@ -39,23 +68,25 @@ export default function RoadmapSection() {
   ];
 
   return (
-    <section id="roadmap" className="relative py-16 px-4 overflow-hidden">
+    <section ref={sectionRef} id="roadmap" className="relative py-16 px-4 overflow-hidden">
       {/* Background/Top gradient transitions */}
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-slate-950 to-transparent pointer-events-none z-1" />
 
       <div className="max-w-4xl md:max-w-6xl mx-auto w-full relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-12 bg-white/20" />
-            <div className="px-3 py-1 bg-transparent border border-white/20 text-white text-[10px] uppercase tracking-widest font-semibold rounded-sm">
-              Our Journey
+        <ScrollReveal variant="fadeInUp" duration={800} threshold={0.15}>
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-[1px] w-12 bg-white/20" />
+              <div className="px-3 py-1 bg-transparent border border-white/20 text-white text-[10px] uppercase tracking-widest font-semibold rounded-sm">
+                Our Journey
+              </div>
+              <div className="h-[1px] w-12 bg-white/20" />
             </div>
-            <div className="h-[1px] w-12 bg-white/20" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
+              The Roadmap
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
-            The Roadmap
-          </h2>
-        </div>
+        </ScrollReveal>
 
         {/* Mobile/Tablet Vertical Timeline */}
         <div className="relative mt-12 md:hidden">
@@ -64,9 +95,17 @@ export default function RoadmapSection() {
 
           {/* Progress bar line */}
           <div
-            className="absolute left-1/2 top-0 w-[2px] bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.6)] -translate-x-1/2"
-            style={{ height: "50%" }}
-          />
+            className="absolute left-1/2 top-0 w-[2px] bg-violet-500 -translate-x-1/2 transition-all duration-[2000ms] ease-out z-10"
+            style={{ height: isInView ? "50%" : "0%" }}
+          >
+            {/* Leading Edge Spark / Pointer Head at the bottom */}
+            <svg
+              viewBox="0 0 10 10"
+              className="absolute bottom-0 left-1/2 w-4.5 h-4.5 text-violet-400 fill-current animate-spark-glow-vertical"
+            >
+              <polygon points="1,2 5,8 9,2" />
+            </svg>
+          </div>
 
           {/* Timeline Nodes */}
           <div className="space-y-10 relative">
@@ -79,6 +118,14 @@ export default function RoadmapSection() {
                   key={index}
                   onClick={() => setActiveNode(isActive ? null : index)}
                   className="relative flex items-center justify-center min-h-[90px] w-full group cursor-pointer select-none"
+                  style={{
+                    opacity: isInView ? (isCompleted ? 1 : 0.6) : 0,
+                    transform: isInView ? "scale(1)" : "scale(0.85)",
+                    transition: "all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    transitionDelay: isInView 
+                      ? `${index === 0 ? 0 : index === 1 ? 800 : index === 2 ? 1600 : 2000 + (index - 3) * 200}ms` 
+                      : "0ms",
+                  }}
                 >
                   {/* Central Node Dot */}
                   <div className={`absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${isActive
@@ -130,9 +177,20 @@ export default function RoadmapSection() {
 
           {/* Progress bar line */}
           <div
-            className="absolute top-1/2 h-[2px] bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.6)] -translate-y-1/2"
-            style={{ left: `${100 / (nodes.length * 2)}%`, right: "50%" }}
-          />
+            className="absolute top-1/2 h-[2px] bg-violet-500 -translate-y-1/2 transition-all duration-[2000ms] ease-out z-10"
+            style={{ 
+              left: `${100 / (nodes.length * 2)}%`, 
+              width: isInView ? "41.67%" : "0%" 
+            }}
+          >
+            {/* Leading Edge Spark / Pointer Head */}
+            <svg
+              viewBox="0 0 10 10"
+              className="absolute right-0 top-1/2 w-4.5 h-4.5 text-violet-400 fill-current animate-spark-glow-horizontal"
+            >
+              <polygon points="2,1 8,5 2,9" />
+            </svg>
+          </div>
 
           {/* Timeline Nodes */}
           <div className="flex justify-between items-center w-full relative h-full min-h-[350px]">
@@ -145,6 +203,14 @@ export default function RoadmapSection() {
                   key={index}
                   onClick={() => setActiveNode(isActive ? null : index)}
                   className="relative flex flex-col items-center justify-center group cursor-pointer select-none flex-1"
+                  style={{
+                    opacity: isInView ? (isCompleted ? 1 : 0.6) : 0,
+                    transform: isInView ? "scale(1)" : "scale(0.85)",
+                    transition: "all 600ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    transitionDelay: isInView 
+                      ? `${index === 0 ? 0 : index === 1 ? 800 : index === 2 ? 1600 : 2000 + (index - 3) * 200}ms` 
+                      : "0ms",
+                  }}
                 >
                   {/* Central Node Dot */}
                   <div className={`w-3.5 h-3.5 rounded-full border-2 border-slate-950 bg-white transition-all duration-300 z-20 ${isActive
@@ -157,12 +223,12 @@ export default function RoadmapSection() {
                   {/* Content Container */}
                   <div
                     className={`absolute w-44 text-center transition-all duration-300 ${isEven
-                      ? "bottom-full mb-6"
-                      : "top-full mt-6"
-                      } ${isActive
-                        ? (isEven ? "-translate-y-1" : "translate-y-1")
-                        : (isEven ? "group-hover:-translate-y-1" : "group-hover:translate-y-1")
-                      }`}
+                       ? "bottom-full mb-6"
+                       : "top-full mt-6"
+                       } ${isActive
+                         ? (isEven ? "-translate-y-1" : "translate-y-1")
+                         : (isEven ? "group-hover:-translate-y-1" : "group-hover:translate-y-1")
+                       }`}
                   >
                     <div className="inline-block w-full">
                       <span className="text-[10px] font-semibold text-violet-400 uppercase tracking-wider block">

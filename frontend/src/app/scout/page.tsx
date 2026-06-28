@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import StarfieldCanvas from "@/components/StarfieldCanvas";
 
 export default function ScoutRecruitmentPage() {
   const tracks = [
@@ -33,14 +34,7 @@ export default function ScoutRecruitmentPage() {
     <div className="relative pt-36 md:pt-44 pb-24 px-4 min-h-screen bg-slate-950 text-white overflow-hidden">
       {/* Background starry sky */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/dark_sky.webp"
-          alt="Starry Sky Background"
-          fill
-          className="object-cover object-center hidden sm:block"
-          sizes="100vw"
-          quality={90}
-        />
+        <StarfieldCanvas />
         <div className="absolute inset-0 bg-slate-950/40" />
       </div>
 
