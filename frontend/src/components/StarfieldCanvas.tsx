@@ -42,7 +42,7 @@ export default function StarfieldCanvas() {
 
     let stars: Star[] = [];
     let activeShootingStar: ShootingStar | null = null;
-    let timeToNextSpawn = Math.random() * 5000 + 5000; // 5s to 10s
+    let timeToNextSpawn = Math.random() * 2000 + 1000; // 1s to 3s
     let animationFrameId: number;
     let lastTime = performance.now();
 
@@ -67,27 +67,20 @@ export default function StarfieldCanvas() {
         let speedX = 0.012;
         let isTwinkling = Math.random() < 0.08;
 
-        if (rand < 0.5) {
-          // Background layer (50%): Smallest, dimmest, slowest
+        if (rand < 0.6) {
+          // Background layer (60%): Smallest, dimmest, slowest
           size = Math.random() * 0.4 + 0.6; // 0.6px to 1.0px
           baseOpacity = Math.random() * 0.25 + 0.15; // 0.15 to 0.40
           speedY = 0.025;
           speedX = 0.012;
           isTwinkling = Math.random() < 0.12; // distant stars twinkle more
-        } else if (rand < 0.85) {
-          // Midground layer (35%): Medium
+        } else {
+          // Midground layer (40%): Medium
           size = Math.random() * 0.6 + 1.0; // 1.0px to 1.6px
           baseOpacity = Math.random() * 0.3 + 0.35; // 0.35 to 0.65
           speedY = 0.06;
           speedX = 0.03;
           isTwinkling = Math.random() < 0.08;
-        } else {
-          // Foreground layer (15%): Largest, brightest, fastest
-          size = Math.random() * 0.8 + 1.6; // 1.6px to 2.4px
-          baseOpacity = Math.random() * 0.3 + 0.55; // 0.55 to 0.85
-          speedY = 0.14;
-          speedX = 0.07;
-          isTwinkling = Math.random() < 0.04; // near stars twinkle less
         }
 
         list.push({
@@ -226,7 +219,7 @@ export default function StarfieldCanvas() {
             maxLife: Math.floor(Math.random() * 15 + 25), // 0.4s to 0.7s at 60fps
           };
 
-          timeToNextSpawn = Math.random() * 5000 + 5000; // 5s to 10s
+          timeToNextSpawn = Math.random() * 1000 + 1000; // 1s to 3s
         }
       }
     };

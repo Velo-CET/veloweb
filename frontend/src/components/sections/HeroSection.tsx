@@ -17,7 +17,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0 bg-slate-950/50" />
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-900 via-transparent to-black/40" />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full px-4">
+      <div className="absolute top-[42%] md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full px-4">
         <h1 className="text-2xl md:text-6xl lg:text-6xl uppercase font-bold text-white tracking-[0.05em] sm:tracking-[0.15em] animate-glow-breathing leading-tight">
           <span className="block -translate-x-2 md:-translate-x-10">
             <span className="inline-block animate-reveal-ltr stagger-delay-1">
@@ -83,10 +83,10 @@ export default function HeroSection() {
       </div>
 
       {/* Mobile Scroll Down Icon (bottom left, animated) */}
-      <div className="absolute bottom-8 left-6 md:hidden z-10 flex flex-col items-center gap-1 opacity-80 select-none">
-        <span className="text-[8px] uppercase tracking-widest text-white/50 font-bold mb-1">SCROLL</span>
+      <div className="absolute bottom-16 left-6 md:hidden z-10 flex flex-col items-center gap-1.5 opacity-80 select-none">
+        <span className="text-[10px] uppercase tracking-widest text-white/50 font-bold mb-1">SCROLL</span>
         <svg
-          className="w-4 h-4 text-white/70 animate-bounce"
+          className="w-7 h-7 text-white/70 animate-bounce"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.5"
@@ -100,7 +100,7 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-8 right-4 md:right-8 z-10 block">
+      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-16 right-4 md:bottom-8 md:right-8 z-10 block">
         <Link
           href="/scout"
           className="block transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"

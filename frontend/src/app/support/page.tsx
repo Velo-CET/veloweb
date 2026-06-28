@@ -56,52 +56,8 @@ export default async function SupportPage() {
           </p>
         </div>
 
-        {/* Section 1: Wishlist Summary */}
-        <div id="sponsor-a-part" className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className={`text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider ${lastUpdated ? "mb-2" : "mb-4"}`} style={spaceGrotesk.style}>
-              Sponsor a Part
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-4">
-              We urgently need these items for our current progress. The list provided is actively maintained and updated
-            </p>
-            {lastUpdated && (
-              <p className="text-xs text-slate-500 text-center uppercase tracking-widest font-mono">
-                {lastUpdated}
-              </p>
-            )}
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            {errorMsg ? (
-              <div className="p-8 rounded-2xl border border-red-500/20 bg-red-950/10 text-center space-y-4 max-w-2xl mx-auto backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-rose-500 mx-auto">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                </svg>
-                <h3 className="text-lg font-bold text-white uppercase tracking-wider">Failed to Load Wishlist</h3>
-                <p className="text-slate-400 text-sm max-w-md mx-auto">
-                  {errorMsg}
-                </p>
-              </div>
-            ) : (
-              <WishlistTable items={items} />
-            )}
-          </div>
-        </div>
-        {/* Bottom CTA: Corporate Sponsorship */}
-        <div className="text-center py-10 border-t border-slate-800/60">
-          <p className="text-sm text-slate-400 mb-6">
-            Looking for corporate partnership tiers?
-          </p>
-          <Link
-            href="/sponsorship"
-            className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
-          >
-            View Sponsorship Packages
-          </Link>
-        </div>
         {/* Section 2: Crowdfunding / QR Code */}
-        <div className="relative overflow-hidden bg-slate-900/20 border border-slate-800/80 rounded-3xl p-8 sm:p-12 mb-16 shadow-xl">
+        <div className="relative overflow-hidden bg-slate-900/20 border border-slate-800/80 rounded-3xl p-8 sm:p-12 mb-20 shadow-xl">
           <div className="absolute -top-24 -left-24 w-48 h-48 bg-violet-500/5 rounded-full blur-[60px] pointer-events-none" />
 
           <div className="relative z-10 max-w-4xl mx-auto">
@@ -144,6 +100,52 @@ export default async function SupportPage() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Section 1: Wishlist Summary */}
+        <div id="sponsor-a-part" className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className={`text-2xl sm:text-3xl font-bold text-white uppercase tracking-wider ${lastUpdated ? "mb-2" : "mb-4"}`} style={spaceGrotesk.style}>
+              Sponsor a Part
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-4">
+              We urgently need these items for our current progress. The list provided is actively maintained and updated
+            </p>
+            {lastUpdated && (
+              <p className="text-xs text-slate-500 text-center uppercase tracking-widest font-mono">
+                {lastUpdated}
+              </p>
+            )}
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            {errorMsg ? (
+              <div className="p-8 rounded-2xl border border-red-500/20 bg-red-950/10 text-center space-y-4 max-w-2xl mx-auto backdrop-blur-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-rose-500 mx-auto">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                </svg>
+                <h3 className="text-lg font-bold text-white uppercase tracking-wider">Failed to Load Wishlist</h3>
+                <p className="text-slate-400 text-sm max-w-md mx-auto">
+                  {errorMsg}
+                </p>
+              </div>
+            ) : (
+              <WishlistTable items={items} />
+            )}
+          </div>
+        </div>
+
+        {/* Bottom CTA: Corporate Sponsorship */}
+        <div className="text-center py-10 border-t border-slate-800/60">
+          <p className="text-sm text-slate-400 mb-6">
+            Looking for corporate partnership tiers?
+          </p>
+          <Link
+            href="/sponsorship"
+            className="inline-block border border-violet-300/30 px-8 py-3 text-xs uppercase tracking-widest text-white hover:border-white hover:scale-105 transition-all duration-200 rounded-sm"
+          >
+            View Sponsorship Packages
+          </Link>
         </div>
 
 
