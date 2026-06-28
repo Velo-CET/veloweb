@@ -53,28 +53,50 @@ h4 {
   animation: textGlowBreathing 4s ease-in-out infinite alternate;
 }
 
-@keyframes textRevealLeftToRight {
+.hero-text-highlight {
+  background: linear-gradient(to right, #ffffff 50%, rgba(156, 163, 175, 0.3) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.loaded .hero-text-highlight.stagger-delay-1 {
+  animation: textHighlightReveal 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 200ms;
+}
+
+.loaded .hero-text-highlight.stagger-delay-2 {
+  animation: textHighlightReveal 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 600ms;
+}
+
+@keyframes textHighlightReveal {
   from {
-    clip-path: inset(0 100% 0 0);
-    transform: translateX(-20px);
+    background-position: 100% 0;
   }
 
   to {
-    clip-path: inset(0 0 0 0);
-    transform: translateX(0);
+    background-position: 0 0;
   }
 }
 
-.animate-reveal-ltr {
-  display: inline-block;
-  clip-path: inset(0 100% 0 0);
-  transform: translateX(-20px);
-  opacity: 0;
+.text-highlight-initial {
+  background: linear-gradient(to right, #ffffff 50%, rgba(156, 163, 175, 0.35) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: block;
 }
 
-.loaded .animate-reveal-ltr {
-  opacity: 1;
-  animation: textRevealLeftToRight 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.text-highlight-active {
+  animation: textHighlightReveal 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 @keyframes simpleFadeInUp {

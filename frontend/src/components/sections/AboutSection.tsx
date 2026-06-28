@@ -19,7 +19,7 @@ export default function AboutSection() {
             </h1>
           </ScrollReveal>
 
-          <ScrollReveal variant="fadeInUp" delay={150} duration={800} threshold={0.15}>
+          <ScrollReveal variant="textHighlight" delay={150} duration={2000} threshold={0.15}>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto">
               We are on a mission to launch India&apos;s aerospace future through
               competitive rocketry and advanced technology research.

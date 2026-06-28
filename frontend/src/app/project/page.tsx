@@ -78,6 +78,10 @@ export default function ProjectPage() {
 
         {/* SD-1000 Translucent Card */}
         <div id="sd1000" className="relative overflow-hidden bg-slate-950/20 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl hover:border-white/20 transition-all duration-300">
+          {/* Diagonal Glassy Completed Banner */}
+          <div className="absolute top-6 right-[-30px] rotate-45 bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 text-[9px] font-bold uppercase tracking-widest px-10 py-1.5 backdrop-blur-md shadow-lg z-20">
+            Completed
+          </div>
 
           {/* Starry Sky Background with translucent effect */}
           <div className="absolute inset-0 z-0 pointer-events-none">

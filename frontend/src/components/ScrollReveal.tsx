@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
-  variant?: "fadeIn" | "fadeInUp" | "fadeInDown" | "fadeInLeft" | "fadeInRight" | "zoomIn";
+  variant?: "fadeIn" | "fadeInUp" | "fadeInDown" | "fadeInLeft" | "fadeInRight" | "zoomIn" | "textHighlight";
   delay?: number; // in ms
   duration?: number; // in ms
   threshold?: number;
@@ -79,6 +79,11 @@ export default function ScrollReveal({
         return {
           initial: "opacity-0 scale-95",
           animate: "opacity-100 scale-100",
+        };
+      case "textHighlight":
+        return {
+          initial: "text-highlight-initial",
+          animate: "text-highlight-active",
         };
       default:
         return {

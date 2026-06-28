@@ -20,12 +20,12 @@ export default function HeroSection() {
       <div className="absolute top-[42%] md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center w-full px-4">
         <h1 className="text-2xl md:text-6xl lg:text-6xl uppercase font-bold text-white tracking-[0.05em] sm:tracking-[0.15em] animate-glow-breathing leading-tight">
           <span className="block -translate-x-2 md:-translate-x-10">
-            <span className="inline-block animate-reveal-ltr stagger-delay-1">
+            <span className="hero-text-highlight stagger-delay-1">
               DEFYING GRAVITY,
             </span>
           </span>
           <span className="block translate-x-2 md:translate-x-10 mt-2 md:mt-4">
-            <span className="inline-block animate-reveal-ltr stagger-delay-2">
+            <span className="hero-text-highlight stagger-delay-2">
               DEFINING INNOVATION
             </span>
           </span>
@@ -83,7 +83,7 @@ export default function HeroSection() {
       </div>
 
       {/* Mobile Scroll Down Icon (bottom left, animated) */}
-      <div className="absolute bottom-16 left-6 md:hidden z-10 flex flex-col items-center gap-1.5 opacity-80 select-none">
+      <div className="absolute bottom-24 left-6 md:hidden z-10 flex flex-col items-center gap-1.5 opacity-80 select-none">
         <span className="text-[10px] uppercase tracking-widest text-white/50 font-bold mb-1">SCROLL</span>
         <svg
           className="w-7 h-7 text-white/70 animate-bounce"
@@ -100,7 +100,7 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-16 right-4 md:bottom-8 md:right-8 z-10 block">
+      <ScrollReveal variant="fadeInRight" delay={700} duration={800} className="absolute bottom-24 right-4 md:bottom-8 md:right-8 z-10 block">
         <Link
           href="/scout"
           className="block transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"
